@@ -15,32 +15,50 @@
     </header>
     <main>
 <!-- section Réservation -->
-        <section class="reservation">
-            <div class="reserv__location"></div>
-            <div class="reserv__body">
-                <div class="reserv__title title"></div>
-                <div class="reserv__text"></div>
-                <button class="reserv__btn"></button>
+        <form class="reservation">
+            <div class="reserv__location">
+                <i class=""></i>
+                <input class="input-location" type="text" placeholder="Paris, Belleville">
             </div>
-        </section>
+            <div class="reserv__body">
+                <div class="reserv__title title">
+                    <h2>Réservez le menu qui vous convient</h2>
+                </div>
+                <div class="reserv__text">
+                    <p>Découvres des restaurants d'exception, séléctionnés par nos soins.</p>
+                </div>
+                <button class="reserv__btn">Explorer nos restaurants</button>
+            </div>
+        </form>
     
 <!-- section Fonctionnement -->
         <section class="fonction">
             <div class="fonction__body">
-                <div class="fonction__title title"></div>
+                <div class="fonction__title title">
+                    <h2>Fonctionnement</h2>
+                </div>
 
                 <div class="fonction__btns">
                     <div class="fonction__btn">
                         <div class="number-btn"></div>
-                        <div class="body-btn"></div>
+                        <div class="body-btn">
+                            <i></i>
+                            <h3>Choisissez un restaurant</h3>
+                        </div>
                     </div>
                     <div class="fonction__btn">
                         <div class="number-btn"></div>
-                        <div class="body-btn"></div>
+                        <div class="body-btn">
+                            <i></i>
+                            <h3>Composez votre menu</h3>
+                        </div>
                     </div>
-                    <div class="fonction__btn fonction__btn_active">
+                    <div class="fonction__btn fonction__btn--active">
                         <div class="number-btn"></div>
-                        <div class="body-btn"></div>
+                        <div class="body-btn">
+                            <i></i>
+                            <h3>Dégustez au restaurant</h3>
+                        </div>
                     </div>
 
                 </div>              
@@ -48,7 +66,9 @@
         </section>
 <!-- section Restaurants -->
         <section class="resto">
-            <div class="resto__title title"></div>
+            <div class="resto__title title">
+                <h2>Restaurants</h2>
+            </div>
             <div class="resto__cards">
                 <div class="resto__card">
                     <div class="card-image"></div>
@@ -93,10 +113,26 @@
             </div>
         </section>
     </main>
-    
+
     <footer class="footer">
         <div class="footer-logo"></div>
-
+        <div class="footer__item">
+            <ul>
+                <li><a href="#" class="link"><i></i>                   
+                    <h3>Proposer un restaurant</h3></a>
+                </li>
+                <li><a href="#" class="link"><i></i>
+                    <h3>Devenir partenaire</h3>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="footer__item">
+            <ul>
+                <li><a href="#" class="link"><h3>Mentions légales</h3></a></li>   
+                <li><a href="#" class="link"><h3>Contact</h3></a></li>
+            </ul>
+        </div>
     </fotter>
 </body>
 </html>
