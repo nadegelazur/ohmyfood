@@ -1,0 +1,190 @@
+@charset "UTF-8";
+/* ======= Polices ===========
+Logo et Titre: Shrikhand
+Texte: Roboto
+
+======= Couleurs ==========
+Primaire (violet): #9356DC;
+Secondaire (rose): #FF79DA;
+Tertaire (bluemarine): #99E2D0;
+*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+/*======== Variables ========*/
+/*======== Modèles ========*/
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  height: 45px;
+}
+
+.reservation {
+  text-align: center;
+}
+
+.reserv {
+  background-color: #f6f6f6;
+  height: auto;
+  padding: 35px;
+}
+
+.reserv__location {
+  background-color: #eaeaea;
+  height: 35px;
+}
+
+.reserv__location .input-location {
+  background-color: #eaeaea;
+  height: 35px;
+}
+
+.reserv__title {
+  padding-bottom: 15px;
+}
+
+.reserv__text {
+  padding-bottom: 20px;
+}
+
+.reserv__btn {
+  background-color: #9356DC;
+  border-radius: 25px;
+  height: 40px;
+  width: 75%;
+  color: #fff;
+  -webkit-box-shadow: 0 0 20px #56585c;
+          box-shadow: 0 0 20px #56585c;
+}
+
+.fonction {
+  background-color: beige;
+  padding: 25px;
+}
+
+.fonction__title {
+  padding-bottom: 20px;
+}
+
+.fonction__btn {
+  background-color: #f6f6f6;
+  height: 55px;
+  -webkit-box-shadow: 0 0 20px #56585c;
+          box-shadow: 0 0 20px #56585c;
+  border-radius: 15px;
+  font-weight: 400;
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.resto {
+  background-color: #f6f6f6;
+  height: auto;
+  padding: 15px;
+}
+
+.resto__card {
+  color: black;
+  margin-bottom: .25rem;
+}
+
+.resto-title {
+  font-size: 4rem;
+  padding-left: 2.5rem;
+  margin: 0;
+  line-height: 6rem;
+}
+
+footer {
+  background-color: #353535;
+}
+
+footer .footer {
+  margin: 15px;
+}
+
+footer .footer .link {
+  color: #fff;
+}
+/*# sourceMappingURL=style.css.map */
