@@ -48,8 +48,11 @@ body {
     padding: 15px;
     &__title h1{    
         font-size: 22px;
-        text-align: center;      
+        text-align: center;    
     }
+}
+.header h1 {
+    animation-name: moveInLeft;
 }
 .reservation {
     text-align: center;
@@ -58,6 +61,7 @@ body {
     background-color: $btngrey;
     height: auto;
     padding: 35px;
+    position: relative;
     &__location{
         background-color: #eaeaea;
         height: 35px;
@@ -67,21 +71,27 @@ body {
         }
     }
     &__title{
-        padding-bottom: 15px;    
+        display: block;
+        padding-bottom: 15px; 
+        font-weight: 600;  
+        font-size: 18px; 
     }
-    &__text{
+    &__subtitle{
+        display: block;
         padding-bottom: 20px;
+        font-weight: 200;
     }
     &__btn {
-        background-color: $violet;
+        //background-color: $violet;
+        background-image: linear-gradient( to bottom, $pink, $violet);
         border-radius: 25px;
         height: 40px;
         width: 75%;
         color: #fff;
         @extend %shadow;
-    }
-    
+    } 
 }
+ 
 .fonction {
     background-color: beige;
     padding: 25px;
@@ -93,7 +103,7 @@ body {
         background-color: $btngrey;        
         height: 55px;
         @extend %shadow;
-        border-radius: 15px;
+        border-radius: 18px;
         font-weight:400;
         font-size: 15px;
         text-align: center;
@@ -112,16 +122,17 @@ body {
     background-color: #fff;
     border-radius: 15px;
     margin-bottom: 15px;
-    &__body{
-        padding: 10px;
-    }
 }
+
 .card__image {
     height: 145px;
-    border-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
     position: relative;
-    overflow: hidden;
-    
+    overflow: hidden;  
+}
+.card__body {
+    padding: 10px;
 }
 .card__image img{
     width: 100%;
@@ -143,3 +154,4 @@ footer {
         }   
     }
 }
+

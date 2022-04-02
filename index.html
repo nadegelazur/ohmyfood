@@ -4,29 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href=".public/css/style.css">
     <title>commande de repas en ligne | Ohmyfood</title>
 </head>
 <body>
 <!-- Header -->
     <header class="header">
-        <div class="header-btn"></div>
-        <div class="header-logo"></div>
+        <div class="header__btn"></div>
+        <div class="header__title">
+            <h1>ohmyfood</h1>
+        </div>
     </header>
     <main>
 <!-- section Réservation -->
         <form class="reservation">
             <div class="reserv__location">
-                <i class=""></i>
+                <i class="fa-solid fa-location-dot"></i>
                 <input class="input-location" type="text" placeholder="Paris, Belleville">
             </div>
-            <div class="reserv__body">
-                <div class="reserv__title title">
+            <div class="reserv">
+                <h2 class="reserv-text-box">
+                    <span class="reserv__title title">Réservez le menu qui vous convient</span>
+                    <span class="reserv__subtitle subtitle">Découvres des restaurants d'exception, séléctionnés par nos soins.</span>
+                </h2>
+                <!-- <div class="reserv__title title">
                     <h2>Réservez le menu qui vous convient</h2>
                 </div>
                 <div class="reserv__text">
                     <p>Découvres des restaurants d'exception, séléctionnés par nos soins.</p>
-                </div>
+                </div> -->
                 <button class="reserv__btn">Explorer nos restaurants</button>
             </div>
         </form>
@@ -34,31 +40,37 @@
 <!-- section Fonctionnement -->
         <section class="fonction">
             <div class="fonction__body">
-                <div class="fonction__title title">
+                <div class="section__title title">
                     <h2>Fonctionnement</h2>
                 </div>
-
                 <div class="fonction__btns">
                     <div class="fonction__btn">
-                        <div class="number-btn"></div>
-                        <div class="body-btn">
-                            <i></i>
-                            <h3>Choisissez un restaurant</h3>
-                        </div>
+                        <a href="#" class="link">
+                            <h3 class="body-btn">
+                                <span class="number-btn"><i class="fa-solid fa-mobile-screen-button"></i></span>
+                                <span class="title-btn">Choisissez un restaurant<span>
+                            </h3>
+                        </a>
                     </div>
+                    
                     <div class="fonction__btn">
-                        <div class="number-btn"></div>
-                        <div class="body-btn">
-                            <i></i>
-                            <h3>Composez votre menu</h3>
-                        </div>
+                        <a href="#" class="link">
+                            <h3 class="body-btn">
+                                <span class="number-btn"><i class="fa-solid fa-list-ul"></i></span>
+                                <span class="title-btn">Composez votre menu<span>
+                            </h3>
+                        </a>
                     </div>
+                    
+                    
+                    
                     <div class="fonction__btn fonction__btn--active">
-                        <div class="number-btn"></div>
-                        <div class="body-btn">
-                            <i></i>
-                            <h3>Dégustez au restaurant</h3>
-                        </div>
+                        <a href="#" class="link">
+                            <h3 class="body-btn">
+                                <span class="number-btn"><i class="fa-solid fa-store"></i></span>
+                                <span class="title-btn">Dégustez au restaurant<span>
+                            </h3>
+                        </a>
                     </div>
 
                 </div>              
@@ -66,73 +78,81 @@
         </section>
 <!-- section Restaurants -->
         <section class="resto">
-            <div class="resto__title title">
+            <div class="section__title title">
                 <h2>Restaurants</h2>
             </div>
             <div class="resto__cards">
-                <div class="resto__card">
-                    <div class="card-image"></div>
-                    <div class="card-body">
-                        <div class="column__text">
-                            <div class="resto-title"></div>
-                            <div class="recto-local"></div>
+                <div class="card__resto">
+                    <div class="card__image">
+                        <img src="./sass/img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="photo">
+                    </div>
+                    <div class="card__body">
+                        <div class="card__text">
+                            <div class="resto-title"><h4>La palette du goût</h4></div>
+                            <div class="recto-local"><p>Ménilmontant</p></div>
                         </div>
-                        <div class="column__like"></div>                       
+                        <div class="card__like"><i class="fa-regular fa-heart"></i></div>                                             
                     </div>
                 </div>
-                <div class="resto__card">
-                    <div class="card-image"></div>
-                    <div class="card-body">
-                        <div class="column__text">
-                            <div class="resto-title"></div>
-                            <div class="recto-local"></div>
+                <div class="card__resto">
+                    <div class="card__image">
+                        <img src="./sass/img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="photo">
+                    </div>
+                    <div class="card__body">
+                        <div class="card__text">
+                            <div class="resto-title"><h4>La palette du goût</h4></div>
+                            <div class="recto-local"><p>Ménilmontant</p></div>
                         </div>
-                        <div class="column__like"></div>                       
+                        <div class="card__like"><i class="fa-regular fa-heart"></i></div>                       
                     </div>
                 </div>
-                <div class="resto__card">
-                    <div class="card-image"></div>
-                    <div class="card-body">
-                        <div class="column__text">
-                            <div class="resto-title"></div>
-                            <div class="recto-local"></div>
+                <div class="card__resto">
+                    <div class="card__image">
+                        <img src="./sass/img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="photo">
+                    </div>
+                    <div class="card__body">
+                        <div class="card__text">
+                            <div class="resto-title"><h4>La palette du goût</h4></div>
+                            <div class="recto-local"><p>Ménilmontant</p></div>
                         </div>
-                        <div class="column__like"></div>                       
+                        <div class="card__like"><i class="fa-regular fa-heart"></i></div>                       
                     </div>
                 </div>
-                <div class="resto__card">
-                    <div class="card-image"></div>
-                    <div class="card-body">
-                        <div class="column__text">
-                            <div class="resto-title"></div>
-                            <div class="recto-local"></div>
+                <div class="card__resto">
+                    <div class="card__image">
+                        <img src="./sass/img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="photo">
+                    </div>
+                    <div class="card__body">
+                        <div class="card__text">
+                            <div class="resto-title"><h4>La palette du goût</h4></div>
+                            <div class="recto-local"><p>Ménilmontant</p></div>
                         </div>
-                        <div class="column__like"></div>                       
+                        <div class="card__like"><i class="fa-regular fa-heart"></i></div>                       
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer-logo"></div>
-        <div class="footer__item">
-            <ul>
-                <li><a href="#" class="link"><i></i>                   
-                    <h3>Proposer un restaurant</h3></a>
-                </li>
-                <li><a href="#" class="link"><i></i>
-                    <h3>Devenir partenaire</h3>
-                </li>
-            </ul>
-        </div>
-        
-        <div class="footer__item">
-            <ul>
-                <li><a href="#" class="link"><h3>Mentions légales</h3></a></li>   
-                <li><a href="#" class="link"><h3>Contact</h3></a></li>
-            </ul>
+    <footer>
+        <div class="footer">
+            <div class="footer__title">ohmyfood</div>
+            <div class="footer__item">
+                <div class="item--link">
+                    <a href="#" class="link"><i></i><h3>Proposer un restaurant</h3></a>
+                </div>
+                <div class="item--link">
+                    <a href="#" class="link"><i></i><h3>Devenir partenaire</h3></a>
+                </div>             
+                <div class="item--link">
+                    <a href="#" class="link"><h3>Mentions légales</h3></a>
+                </div>                
+                <div class="item--link">
+                    <a href="#" class="link"><h3>Contact</h3></a>  
+                 </div>              
+            </div>
         </div>
     </fotter>
+    <script src="https://kit.fontawesome.com/73e0b520f9.js" crossorigin="anonymous"></script>   
 </body>
 </html>

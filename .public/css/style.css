@@ -1,6 +1,6 @@
-/* 
-======= Polices ===========
-Logo et Titre: Shrikhand
+@charset "UTF-8";
+/* ======= Polices ===========
+Logo et Titre: Shrikhand (font-family: 'Shrikhand', cursive;)
 Texte: Roboto
 
 ======= Couleurs ==========
@@ -8,6 +8,8 @@ Primaire (violet): #9356DC;
 Secondaire (rose): #FF79DA;
 Tertaire (bluemarine): #99E2D0;
 */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,200&family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,200&family=Roboto:wght@100;300;400;500;700&family=Shrikhand&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -82,16 +84,145 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*--------------------*/
-.resto__card {
-  color: black;
-  margin-bottom: 0.25rem;
+/*======== Variables ========*/
+/** colors **/
+/*======== Modèles ========*/
+.card__resto, .fonction__btn, .reserv__btn {
+  box-shadow: 5px 8px 9px rgba(86, 88, 92, 0.22);
 }
 
-.resto-title {
-  font-size: 4rem;
-  padding-left: 2.5rem;
-  margin: 0;
-  line-height: 6rem;
+.fonction__btn {
+  margin-bottom: 15px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+}
+
+.header__title,
+.footer__title {
+  font-family: "Shrikhand", cursive;
+}
+
+.section__title {
+  margin-bottom: 20px;
+}
+
+.header {
+  height: 50px;
+  padding: 15px;
+}
+.header__title h1 {
+  font-size: 22px;
+  text-align: center;
+}
+
+.header h1 {
+  animation-name: moveInLeft;
+}
+
+.reservation {
+  text-align: center;
+}
+
+.reserv {
+  background-color: #f6f6f6;
+  height: auto;
+  padding: 35px;
+  position: relative;
+}
+.reserv__location {
+  background-color: #eaeaea;
+  height: 35px;
+}
+.reserv__location .input-location {
+  background-color: #eaeaea;
+  height: 35px;
+}
+.reserv__title {
+  display: block;
+  padding-bottom: 15px;
+  font-weight: 600;
+  font-size: 18px;
+}
+.reserv__subtitle {
+  display: block;
+  padding-bottom: 20px;
+  font-weight: 200;
+}
+.reserv__btn {
+  background-image: linear-gradient(to bottom, #FF79DA, #9356DC);
+  border-radius: 25px;
+  height: 40px;
+  width: 75%;
+  color: #fff;
+}
+
+.fonction {
+  background-color: beige;
+  padding: 25px;
+}
+.fonction__title {
+  padding-bottom: 20px;
+}
+.fonction__btn {
+  background-color: #f6f6f6;
+  height: 55px;
+  border-radius: 18px;
+  font-weight: 400;
+  font-size: 15px;
+  text-align: center;
+}
+
+.resto {
+  background-color: #f6f6f6;
+  height: auto;
+  padding: 15px;
+}
+
+.card__resto {
+  width: 250px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.card__image {
+  height: 145px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card__body {
+  padding: 10px;
+}
+
+.card__image img {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+footer {
+  background-color: #353535;
+}
+footer .footer {
+  margin: 15px;
+}
+footer .footer__title,
+footer .footer .item--link,
+footer .footer .link {
+  color: #fff;
+  padding-bottom: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
