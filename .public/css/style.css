@@ -87,8 +87,8 @@ h1, h2, h3, h4, h5, h6 {
 /*======== Variables ========*/
 /** colors **/
 /*======== Modèles ========*/
-.card__resto, .fonction__btn, .reserv__btn {
-  box-shadow: 5px 8px 9px rgba(86, 88, 92, 0.22);
+.card__resto, .fonction__btn, .reserv__btn:link, .reserv__btn:visited {
+  box-shadow: 5px 6px 7px rgba(86, 88, 92, 0.22);
 }
 
 .fonction__btn {
@@ -121,10 +121,6 @@ body {
   text-align: center;
 }
 
-.header h1 {
-  animation-name: moveInLeft;
-}
-
 .reservation {
   text-align: center;
 }
@@ -154,12 +150,20 @@ body {
   padding-bottom: 20px;
   font-weight: 200;
 }
-.reserv__btn {
+.reserv__btn:link, .reserv__btn:visited {
   background-image: linear-gradient(to bottom, #FF79DA, #9356DC);
   border-radius: 25px;
-  height: 40px;
-  width: 75%;
+  padding: 12px 15px;
   color: #fff;
+  transition: all 0.25s;
+}
+.reserv__btn:hover {
+  transform: translateY(-0.25em);
+  box-shadow: 0 0.5em 0.5em -0.4em rgba(86, 88, 92, 0.22);
+}
+.reserv__btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .fonction {

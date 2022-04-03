@@ -20,15 +20,14 @@ $bluemarine: #99E2D0;
 $btngrey: #f6f6f6;
 $footerclr: #353535;
          
-
-
 /*======== Modèles ========*/
 %shadow{
-    box-shadow: 5px 8px 9px rgb(86 88 92 / 22%);
+    box-shadow: 5px 6px 7px rgb(86 88 92 / 22%)
 }
 %mb{
     margin-bottom: 15px;
 }
+
 body {
     display: flex;
     flex-direction: column;
@@ -51,9 +50,14 @@ body {
         text-align: center;    
     }
 }
-.header h1 {
-    animation-name: moveInLeft;
-}
+// .header h1 {
+//     animation-name: moveInLeft;
+    
+// }
+// .go-back-icon{
+//     animation: moveInLeft;
+//     animation-duration: 5s;
+// }
 .reservation {
     text-align: center;
 }
@@ -81,15 +85,24 @@ body {
         padding-bottom: 20px;
         font-weight: 200;
     }
-    &__btn {
-        //background-color: $violet;
+    &__btn:link,
+    &__btn:visited {
         background-image: linear-gradient( to bottom, $pink, $violet);
         border-radius: 25px;
-        height: 40px;
-        width: 75%;
+        padding: 12px 15px;
         color: #fff;
         @extend %shadow;
+        transition: all .25s;
     } 
+    &__btn:hover {
+        transform: translateY(-0.25em);
+        box-shadow: 0 0.5em 0.5em -0.4em rgba(86, 88, 92, 0.22);
+
+    }
+    &__btn:active {
+        transform: translateY(-1px);
+        box-shadow: 0 5px 10px rgb(0,0,0,.2);
+    }
 }
  
 .fonction {
@@ -122,6 +135,7 @@ body {
     background-color: #fff;
     border-radius: 15px;
     margin-bottom: 15px;
+    
 }
 
 .card__image {
