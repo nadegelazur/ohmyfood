@@ -13,21 +13,29 @@ Tertaire (bluemarine): #99E2D0;
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,200&family=Roboto:wght@100;300;400;500;700&family=Shrikhand&display=swap');
 
 /*======== Variables ========*/
-       /** colors **/
-$violet: #9356DC;
-$pink: #FF79DA;
-$bluemarine: #99E2D0;
-$btngrey: #f6f6f6;
-$footerclr: #353535;
+       /*** colors ***/
+$color-primary: #9356DC; //violet
+$color-secondary: #FF79DA; //pink
+$color-tertary: #99E2D0; //bluemarine
+
+$color-btn-pink: linear-gradient( to bottom, #FF79DA, #9356DC);
+$color-btn-grey: #f6f6f6;
+
+$color-footer: #353535;
+
+$color-text-light: #fff; //white
+$color-text-dark: #333;
          
 /*======== Modèles ========*/
 %shadow{
-    box-shadow: 5px 6px 7px rgb(86 88 92 / 22%)
+    box-shadow: .5rem .6rem .7rem rgb(86 88 92 / 22%)
 }
 %mb{
-    margin-bottom: 15px;
+    margin-bottom: 1.5rem;
 }
-
+html {
+    font-size: 62.5%;
+}
 body {
     display: flex;
     flex-direction: column;
@@ -35,18 +43,19 @@ body {
     margin: 0 auto;
     font-family: 'Roboto', sans-serif;
 }
+ 
 .header__title,
 .footer__title{
     font-family: 'Shrikhand', cursive;
 }
 .section__title {
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 .header{
-    height: 50px;
-    padding: 15px;
+    height: 5rem;
+    padding: 1.5rem;
     &__title h1{    
-        font-size: 22px;
+        font-size: 2.2rem;
         text-align: center;    
     }
 }
@@ -62,34 +71,34 @@ body {
     text-align: center;
 }
 .reserv {
-    background-color: $btngrey;
+    background-color: $color-btn-grey;
     height: auto;
-    padding: 35px;
+    padding: 3.5rem;
     position: relative;
     &__location{
         background-color: #eaeaea;
-        height: 35px;
+        height: 3.5rem;
         .input-location{
             background-color: #eaeaea;
-            height: 35px;
+            height: 3.5rem;
         }
     }
     &__title{
         display: block;
-        padding-bottom: 15px; 
+        padding-bottom: 1.5rem; 
         font-weight: 600;  
-        font-size: 18px; 
+        font-size: 1.8rem; 
     }
     &__subtitle{
         display: block;
-        padding-bottom: 20px;
+        padding-bottom: 2rem;
         font-weight: 200;
     }
     &__btn:link,
     &__btn:visited {
-        background-image: linear-gradient( to bottom, $pink, $violet);
-        border-radius: 25px;
-        padding: 12px 15px;
+        background-image: linear-gradient( to bottom, $color-secondary, $color-primary);
+        border-radius: 2.5rem;
+        padding: 1.2rem 1.5rem;
         color: #fff;
         @extend %shadow;
         transition: all .25s;
@@ -97,28 +106,29 @@ body {
     &__btn:hover {
         transform: translateY(-0.25em);
         box-shadow: 0 0.5em 0.5em -0.4em rgba(86, 88, 92, 0.22);
+        // color: lighten ($color-btn-pink, 15%);
 
     }
     &__btn:active {
-        transform: translateY(-1px);
-        box-shadow: 0 5px 10px rgb(0,0,0,.2);
+        transform: translateY(-.1rem);
+        box-shadow: 0 .5rem 1rem rgb(0,0,0,.2);
     }
 }
  
 .fonction {
     background-color: beige;
-    padding: 25px;
+    padding: 2.5rem;
 
     &__title{
-        padding-bottom: 20px;
+        padding-bottom: 2rem;
     }
     &__btn{
         background-color: $btngrey;        
-        height: 55px;
+        height: 5.5rem;
         @extend %shadow;
-        border-radius: 18px;
+        border-radius: 1.8rem;
         font-weight:400;
-        font-size: 15px;
+        font-size: 1.5rem;
         text-align: center;
         @extend %mb;
     }
@@ -126,27 +136,26 @@ body {
 .resto {
     background-color: $btngrey;
     height: auto;
-    padding: 15px;
+    padding: 1.5rem;
 }
 .card__resto{
-    width: 250px;
+    width: 25rem;
     margin: 0  auto;
     @extend %shadow;
     background-color: #fff;
-    border-radius: 15px;
-    margin-bottom: 15px;
-    
+    border-radius: 1.5rem;
+    margin-bottom: 1.5rem; 
 }
 
 .card__image {
-    height: 145px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    height: 14.5rem;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
     position: relative;
     overflow: hidden;  
 }
 .card__body {
-    padding: 10px;
+    padding: 1rem;
 }
 .card__image img{
     width: 100%;
@@ -155,17 +164,29 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
+/*** FOOTER ***/
 footer {
-    background-color: $footerclr;
-    .footer {  
-        margin: 15px;  
-        &__title,
-        .item--link,
-        .link {
-            color: #fff;
-            padding-bottom: 10px;
-        }   
+    background-color: $color-footer;
+    .footer__title {
+        font-size: 2rem;
+        color: $color-text-light;
+        margin: 3rem;
+    }
+}
+.navigation {
+    list-style: none;
+    margin-bottom: 3rem;
+
+    li {
+        margin-left: 2rem;
+        padding: .6rem; 
+        a {
+            color:$color-text-light;
+            font-size: 1.5rem;
+        } 
+        a.link {
+            font-weight: 600;
+        }  
     }
 }
 
