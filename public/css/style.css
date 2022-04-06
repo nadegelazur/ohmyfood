@@ -1,0 +1,250 @@
+@charset "UTF-8";
+/* ======= Polices ===========
+Logo et Titre: Shrikhand (font-family: 'Shrikhand', cursive;)
+Texte: Roboto
+
+======= Couleurs ==========
+Primaire (violet): #9356DC;
+Secondaire (rose): #FF79DA;
+Tertaire (bluemarine): #99E2D0;
+*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,200&family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,200&family=Roboto:wght@100;300;400;500;700&family=Shrikhand&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 12px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+/*======== Variables ========*/
+/*** colors ***/
+/*======== Modèles ========*/
+.card__resto, .fonction__btn, .reserv__btn:link, .reserv__btn:visited {
+  box-shadow: 0.5rem 0.6rem 0.7rem rgba(86, 88, 92, 0.22);
+}
+
+.fonction__btn {
+  margin-bottom: 1.5rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+}
+
+.header__title,
+.footer__title {
+  font-family: "Shrikhand", cursive;
+}
+
+.section__title {
+  margin-bottom: 2rem;
+}
+
+.header {
+  height: 5rem;
+  padding: 1.5rem;
+}
+.header__title h1 {
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+.reservation {
+  text-align: center;
+}
+
+.reserv {
+  background-color: #f6f6f6;
+  height: auto;
+  padding: 3.5rem;
+  position: relative;
+}
+.reserv__location {
+  background-color: #eaeaea;
+  height: 3.5rem;
+}
+.reserv__location .input-location {
+  background-color: #eaeaea;
+  height: 3.5rem;
+}
+.reserv__title {
+  display: block;
+  padding-bottom: 1.5rem;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+.reserv__subtitle {
+  display: block;
+  padding-bottom: 2rem;
+  font-weight: 200;
+}
+.reserv__btn:link, .reserv__btn:visited {
+  background-image: linear-gradient(to bottom, #FF79DA, #9356DC);
+  border-radius: 2.5rem;
+  padding: 1.2rem 1.5rem;
+  color: #fff;
+  transition: all 0.25s;
+}
+.reserv__btn:hover {
+  transform: translateY(-0.25em);
+  box-shadow: 0 0.5em 0.5em -0.4em rgba(86, 88, 92, 0.22);
+}
+.reserv__btn:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.fonction {
+  background-color: beige;
+  padding: 2.5rem;
+}
+.fonction__title {
+  padding-bottom: 2rem;
+}
+.fonction__btn {
+  background-color: #f6f6f6;
+  height: 5.5rem;
+  border-radius: 1.8rem;
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.resto {
+  background-color: #f6f6f6;
+  height: auto;
+  padding: 1.5rem;
+}
+
+.card__resto {
+  width: 25rem;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.card__image {
+  height: 14.5rem;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.card__body {
+  padding: 1rem;
+}
+
+.card__image img {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*** FOOTER ***/
+footer {
+  background-color: #353535;
+}
+footer .footer__title {
+  font-size: 2rem;
+  color: #fff;
+  margin: 3rem;
+}
+
+.navigation {
+  list-style: none;
+  margin-bottom: 3rem;
+}
+.navigation li {
+  margin-left: 2rem;
+  padding: 0.6rem;
+}
+.navigation li a {
+  color: #fff;
+  font-size: 1.5rem;
+}
+.navigation li a.link {
+  font-weight: 600;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -14,12 +14,13 @@ Tertaire (bluemarine): #99E2D0;
 
 /*======== Variables ========*/
        /*** colors ***/
-$color-primary: #9356DC; //violet
-$color-secondary: #FF79DA; //pink
-$color-tertary: #99E2D0; //bluemarine
 
+$color-violet: #9356DC; //primary
+$color-pink: #FF79DA; //secondary
+$color-bluemarine: #99E2D0; //tertary
+$color-black: #000;
 $color-btn-pink: linear-gradient( to bottom, #FF79DA, #9356DC);
-$color-btn-grey: #f6f6f6;
+$color-grey: #f6f6f6;
 
 $color-footer: #353535;
 
@@ -28,7 +29,7 @@ $color-text-dark: #333;
          
 /*======== Modèles ========*/
 %shadow{
-    box-shadow: .5rem .6rem .7rem rgb(86 88 92 / 22%)
+    box-shadow: .5rem .6rem .7rem rgba(86 88 92 / 22%)
 }
 %mb{
     margin-bottom: 1.5rem;
@@ -71,7 +72,7 @@ body {
     text-align: center;
 }
 .reserv {
-    background-color: $color-btn-grey;
+    background-color: $color-grey;
     height: auto;
     padding: 3.5rem;
     position: relative;
@@ -96,22 +97,22 @@ body {
     }
     &__btn:link,
     &__btn:visited {
-        background-image: linear-gradient( to bottom, $color-secondary, $color-primary);
+        background-image: linear-gradient( to bottom, $color-pink, $color-violet);
         border-radius: 2.5rem;
         padding: 1.2rem 1.5rem;
-        color: #fff;
+        color: $color-text-light;
         @extend %shadow;
         transition: all .25s;
     } 
     &__btn:hover {
         transform: translateY(-0.25em);
         box-shadow: 0 0.5em 0.5em -0.4em rgba(86, 88, 92, 0.22);
-        // color: lighten ($color-btn-pink, 15%);
+       
 
     }
     &__btn:active {
         transform: translateY(-.1rem);
-        box-shadow: 0 .5rem 1rem rgb(0,0,0,.2);
+        box-shadow: 0 .5rem 1rem rgba($color-black,.2);
     }
 }
  
@@ -123,7 +124,7 @@ body {
         padding-bottom: 2rem;
     }
     &__btn{
-        background-color: $btngrey;        
+        background-color: $color-grey;        
         height: 5.5rem;
         @extend %shadow;
         border-radius: 1.8rem;
@@ -134,7 +135,7 @@ body {
     }
 }
 .resto {
-    background-color: $btngrey;
+    background-color: $color-grey;
     height: auto;
     padding: 1.5rem;
 }
