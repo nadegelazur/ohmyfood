@@ -1,32 +1,18 @@
-/* ======= Polices ===========
-Logo et Titre: Shrikhand (font-family: 'Shrikhand', cursive;)
-Texte: Roboto
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
 
-======= Couleurs ==========
-Primaire (violet): #9356DC;
-Secondaire (rose): #FF79DA;
-Tertaire (bluemarine): #99E2D0;
-*/
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
 
-@import "nullstyle.scss";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,200&family=Shrikhand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,200&family=Roboto:wght@100;300;400;500;700&family=Shrikhand&display=swap');
+@import "components/button";
 
-/*======== Variables ========*/
-       /*** colors ***/
+@import "layout/header";
 
-$color-violet: #9356DC; //primary
-$color-pink: #FF79DA; //secondary
-$color-bluemarine: #99E2D0; //tertary
-$color-black: #000;
-$color-btn-pink: linear-gradient( to bottom, #FF79DA, #9356DC);
-$color-grey: #f6f6f6;
-
-$color-footer: #353535;
-
-$color-text-light: #fff; //white
-$color-text-dark: #333;
-         
+@import "pages/";
+      
 /*======== Modèles ========*/
 %shadow{
     box-shadow: .5rem .6rem .7rem rgba(86 88 92 / 22%)
