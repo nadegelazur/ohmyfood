@@ -11,15 +11,16 @@
 
 @import "layout/header";
 
-@import "pages/";
+
       
 /*======== Modèles ========*/
 %shadow{
     box-shadow: .5rem .6rem .7rem rgba(86 88 92 / 22%)
 }
 %mb{
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
 }
+
 html {
     font-size: 62.5%;
 }
@@ -36,14 +37,25 @@ body {
     font-family: 'Shrikhand', cursive;
 }
 .section__title {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
+
+.title {
+    font-size: 2.2rem;
+    font-weight: 600;
+    }
+
 .header{
-    height: 5rem;
-    padding: 1.5rem;
+    height: 6rem;  
+    align-content: center;  
+    &__title {
+        margin-top: 2rem;
+        margin-bottom: 1.8rem; 
+    }
     &__title h1{    
-        font-size: 2.2rem;
-        text-align: center;    
+        font-size: 3rem;
+        text-align: center;
+           
     }
 }
 // .header h1 {
@@ -64,31 +76,52 @@ body {
     position: relative;
     &__location{
         background-color: #eaeaea;
-        height: 3.5rem;
+        height: 4.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & .location {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 5rem;
+        }
+        & i{
+            font-size: 1.8rem;
+        }
         .input-location{
             background-color: #eaeaea;
             height: 3.5rem;
+            margin-left: 2rem;
+            font-size: 1.5rem;
         }
     }
-    &__title{
+    &__title {
         display: block;
         padding-bottom: 1.5rem; 
         font-weight: 600;  
-        font-size: 1.8rem; 
+        font-size: 2.5rem; 
+        line-height: 1.2;
     }
     &__subtitle{
         display: block;
         padding-bottom: 2rem;
         font-weight: 200;
+        font-size: 1.7rem;
+        line-height: 1.3;
+    }
+    .button {
+        margin: 3rem;
     }
     &__btn:link,
     &__btn:visited {
         background-image: linear-gradient( to bottom, $color-pink, $color-violet);
         border-radius: 2.5rem;
-        padding: 1.2rem 1.5rem;
+        padding: 1.5rem 2.3rem;
         color: $color-text-light;
         @extend %shadow;
         transition: all .25s;
+        font-size: 1.5rem;
     } 
     &__btn:hover {
         transform: translateY(-0.25em);
@@ -101,17 +134,46 @@ body {
         box-shadow: 0 .5rem 1rem rgba($color-black,.2);
     }
 }
- 
+/***********************************/
+/*      SECTION FONCTIONNEMENT        */
+/***********************************/ 
 .fonction {
     background-color: beige;
-    padding: 2.5rem;
-
-    &__title{
-        padding-bottom: 2rem;
+    padding: 3rem 2.5rem;
+    .section__body {
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+    }
+    &__btns {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        & .global__btn {
+          position: relative; 
+          & .number-btn{
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: $color-violet;
+            color: $color-text-light;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;  
+            position: absolute;
+            top: 38%;
+            left: 1%;
+            transform: translate(-50%, -50%);
+            } 
+        }   
     }
     &__btn{
-        background-color: $color-grey;        
-        height: 5.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $color-grey;
+        color: $color-black; 
+        width: 32rem;       
+        height: 7.2rem;
         @extend %shadow;
         border-radius: 1.8rem;
         font-weight:400;
@@ -119,51 +181,109 @@ body {
         text-align: center;
         @extend %mb;
     }
+    &__btn:hover
+    {
+        background-color: $color-btn-clair;
+    }
+    & .body-btn {
+        color: $color-black; 
+    }
+    & .body-btn i {
+        font-size: 2rem;
+        color: grey;
+    }
+    & .body-btn i:active {
+        color: $color-violet;
+    }
+    & .icon-btn{
+        margin-right: 2rem;
+    }
+    & .title-btn {
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+    
+    
+    
 }
+/***********************************/
+/*      SECTION RESTAURANTS        */
+/***********************************/
 .resto {
     background-color: $color-grey;
     height: auto;
-    padding: 1.5rem;
-}
-.card__resto{
-    width: 25rem;
-    margin: 0  auto;
-    @extend %shadow;
-    background-color: #fff;
-    border-radius: 1.5rem;
-    margin-bottom: 1.5rem; 
+    padding: 2.5rem 1.5rem;
+    
+    .section__body {
+        margin: 3rem 0rem;
+    }
+    .menu{
+        width: 32rem;
+        height: 25rem;
+        margin: 0  auto;
+        @extend %shadow;
+        background-color: #fff;
+        border-radius: 1.5rem;
+        margin-bottom: 1.8rem;  
+        &__hero {
+            height: 17.5rem;
+            border-top-left-radius: 1.5rem;
+            border-top-right-radius: 1.5rem;
+            position: relative;
+            overflow: hidden;  
+        }
+        &__hero img{
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        } 
+        &__info {
+            padding: 1rem 2rem 1rem 1rem;
+            display: flex;
+            flex-direction: row;
+        }
+        &__details {
+            width: 70%;
+        }
+        &__title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            line-height: 1.8;
+        }
+        &__description {
+            font-size: 1.7rem;
+            font-weight: 200;
+        }
+        &__like-box {
+            width: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }    
+        &__like {
+            font-size: 2.5rem;
+            color: $color-black;
+        }
+    }   
 }
 
-.card__image {
-    height: 14.5rem;
-    border-top-left-radius: 1.5rem;
-    border-top-right-radius: 1.5rem;
-    position: relative;
-    overflow: hidden;  
-}
-.card__body {
-    padding: 1rem;
-}
-.card__image img{
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-/*** FOOTER ***/
+/***********************************/
+/*             FOOTER              */
+/***********************************/
 footer {
     background-color: $color-footer;
+    min-height: 20rem;
     .footer__title {
-        font-size: 2rem;
+        font-size: 1.8rem;
         color: $color-text-light;
-        margin: 3rem;
+        margin: 3rem 3rem 2rem 3rem;
     }
 }
 .navigation {
     list-style: none;
-    margin-bottom: 3rem;
-
+    
     li {
         margin-left: 2rem;
         padding: .6rem; 
@@ -174,6 +294,9 @@ footer {
         a.link {
             font-weight: 600;
         }  
+        a.link i{
+            margin-right: 1rem;
+        } 
     }
 }
 
