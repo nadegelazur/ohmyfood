@@ -1,0 +1,45 @@
+// MEDIA QUERY MANAGER
+
+/*
+ 0 - 600px: Phone
+ 600 - 900px: Tablette portrait
+ 900 - 1200px: Tablette landscape
+ [1200 - 1800] is where our normal style apply
+ 1800px + : Bos desktop
+
+$braekpoint argument choices:
+- phone
+- tab_port
+- tab_land
+- big_desktop
+
+ORDER 
+
+1em = 16px
+*/
+@mixin respond($breakpoint) {
+    @if $breakpoint == tab_port {
+        @media (min-width: 37.5em) {@content}; //600px
+    }
+    @if $breakpoint == tab_tab {
+        @media (min-width: 43.75em) {@content}; //700px
+    }
+    @if $breakpoint == tab_land {
+        @media (min-width: 56.25em) {@content}; //900px
+    }
+    @if $breakpoint == tablette {
+        @media (min-width: 62.5em) {@content}; //1000px
+    }    
+    @if $breakpoint == desktop {
+        @media (min-width: 75em) {@content}; //1200px
+    }
+    @if $breakpoint == desktop_m {
+        @media (min-width: 81.25em) {@content}; //1300px
+    }
+    @if $breakpoint == desktop_l {
+        @media (min-width: 100em) {@content}; //1600px
+    }
+    @if $breakpoint == big_desktop {
+        @media (min-width: 112.5em) {@content}; //1800px
+    }
+}

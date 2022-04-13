@@ -21,16 +21,6 @@
     margin-bottom: 2.5rem;
 }
 
-html {
-    font-size: 62.5%;
-}
-body {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 0 auto;
-    font-family: 'Roboto', sans-serif;
-}
  
 .header__title,
 .footer__title{
@@ -144,10 +134,22 @@ body {
         margin-top: 3rem;
         margin-bottom: 1rem;
     }
+    .section__title {
+        @include respond (tablette) {
+            text-align: center;
+        }
+    }
     &__btns {
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        @include respond (tablette) {
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            column-gap: 2.5rem;
+        }
         & .global__btn {
           position: relative; 
           & .number-btn{
@@ -217,14 +219,35 @@ body {
     .section__body {
         margin: 3rem 0rem;
     }
+    .section__title {
+        @include respond (tablette) {
+            text-align: center;
+        }
+    }
+    
+    .menus{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @include respond(tab_land) {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
     .menu{
         width: 32rem;
         height: 25rem;
-        margin: 0  auto;
+        margin: 0  .2rem;
         @extend %shadow;
         background-color: #fff;
         border-radius: 1.5rem;
-        margin-bottom: 1.8rem;  
+        margin-bottom: 1.8rem; 
+        
+        @include respond(desktop_m) {
+            width: 40rem;
+        }
         &__hero {
             height: 17.5rem;
             border-top-left-radius: 1.5rem;

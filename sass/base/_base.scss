@@ -37,12 +37,52 @@ ul li{list-style: none;}
 img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 /*--------------------*/
+// 1 rem = 8px, 8/16 = 50% 
+html {
+    // This defines what 1 rem is
+    font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
 
-@media (min-width: 600px) {
-    html {
-
+    @include respond(tab_port) { // width < ?
+        font-size: 70%;
+        .section__title{
+            text-align: center;
+        }
     }
-    body {
-
+    @include respond(tab_land) { // width > 900px ?
+        font-size: 75%; // 1 rem = 12px, 12/16
+        .menus{
+            column-gap: 2rem;
+        }
+    } 
+    @include respond(tablette) { //1000px
+        font-size: 80%;
     }
+
+    @include respond(desktop) {
+        font-size: 85%;
+    }
+
+    @include respond(desktop_m) { //1300px
+        .menus{
+            row-gap: 3rem;
+            column-gap: 4rem;
+        }
+    }
+
+    @include respond(desktop_l) { //1600px
+        .menus{
+            column-gap: 6rem;
+        }
+    }
+
+    @include respond(big_desktop) {
+        font-size: 100%;
+    }
+}
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
 }

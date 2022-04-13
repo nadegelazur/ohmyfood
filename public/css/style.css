@@ -1,5 +1,22 @@
 @charset "UTF-8";
 /*
+ 0 - 600px: Phone
+ 600 - 900px: Tablette portrait
+ 900 - 1200px: Tablette landscape
+ [1200 - 1800] is where our normal style apply
+ 1800px + : Bos desktop
+
+$braekpoint argument choices:
+- phone
+- tab_port
+- tab_land
+- big_desktop
+
+ORDER 
+
+1em = 16px
+*/
+/*
  ======= Couleurs ==========
 Primaire (violet): #9356DC;
 Secondaire (rose): #FF79DA;
@@ -89,6 +106,60 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*--------------------*/
+html {
+  font-size: 62.5%;
+}
+@media (min-width: 37.5em) {
+  html {
+    font-size: 70%;
+  }
+  html .section__title {
+    text-align: center;
+  }
+}
+@media (min-width: 56.25em) {
+  html {
+    font-size: 75%;
+  }
+  html .menus {
+    column-gap: 2rem;
+  }
+}
+@media (min-width: 62.5em) {
+  html {
+    font-size: 80%;
+  }
+}
+@media (min-width: 75em) {
+  html {
+    font-size: 85%;
+  }
+}
+@media (min-width: 81.25em) {
+  html .menus {
+    row-gap: 3rem;
+    column-gap: 4rem;
+  }
+}
+@media (min-width: 100em) {
+  html .menus {
+    column-gap: 6rem;
+  }
+}
+@media (min-width: 112.5em) {
+  html {
+    font-size: 100%;
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+}
+
 /* ======= Polices ===========
 Logo et Titre: Shrikhand (font-family: 'Shrikhand', cursive;)
 Texte: Roboto
@@ -100,18 +171,6 @@ Texte: Roboto
 
 .fonction__btn {
   margin-bottom: 2.5rem;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin: 0 auto;
-  font-family: "Roboto", sans-serif;
 }
 
 .header__title,
@@ -218,10 +277,23 @@ body {
   margin-top: 3rem;
   margin-bottom: 1rem;
 }
+@media (min-width: 62.5em) {
+  .fonction .section__title {
+    text-align: center;
+  }
+}
 .fonction__btns {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media (min-width: 62.5em) {
+  .fonction__btns {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 2.5rem;
+  }
 }
 .fonction__btns .global__btn {
   position: relative;
@@ -285,13 +357,35 @@ body {
 .resto .section__body {
   margin: 3rem 0rem;
 }
+@media (min-width: 62.5em) {
+  .resto .section__title {
+    text-align: center;
+  }
+}
+.resto .menus {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 56.25em) {
+  .resto .menus {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
 .resto .menu {
   width: 32rem;
   height: 25rem;
-  margin: 0 auto;
+  margin: 0 0.2rem;
   background-color: #fff;
   border-radius: 1.5rem;
   margin-bottom: 1.8rem;
+}
+@media (min-width: 81.25em) {
+  .resto .menu {
+    width: 40rem;
+  }
 }
 .resto .menu__hero {
   height: 17.5rem;
