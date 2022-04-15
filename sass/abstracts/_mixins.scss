@@ -43,3 +43,40 @@ ORDER
         @media (min-width: 112.5em) {@content}; //1800px
     }
 }
+// Like's
+@mixin like-box {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    .like {
+        font-size: 2.5rem;
+        color: $color-black;
+    }
+}
+// Button's
+@mixin grey-btn {
+    display: flex;
+    align-items: center;
+    background-color: $color-text-light;
+    color: $color-black; 
+    width: 100%;       
+    height: 7.2rem;
+    @extend %shadow;
+    border-radius: 1.8rem;
+    font-weight:400;
+    font-size: 1.5rem; 
+    @extend %mb;
+}
+
+// Title
+@mixin title {
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    font-weight: 200;
+}
+//title button 
+@mixin subtitle {
+    font-size: 1.7rem;
+    font-weight: 200;
+}

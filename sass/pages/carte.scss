@@ -1,0 +1,15 @@
+.bg__image {
+    max-width: 100%;
+    min-height: 32rem;
+    object-fit: cover;
+}
+.menu{
+    margin-top: -4rem;
+    border-radius: 2rem 2rem 0 0;
+    background-color:  $color-grey;
+    z-index: 1000;
+    position: relative;
+}
+.menu__header{
+    display: flex;
+}

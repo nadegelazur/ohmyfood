@@ -11,30 +11,28 @@
 
 @import "layout/header";
 
-
-      
+@import "pages/carte.scss";
+  
 /*======== Modèles ========*/
+
 %shadow{
     box-shadow: .5rem .6rem .7rem rgba(86 88 92 / 22%)
 }
 %mb{
     margin-bottom: 2.5rem;
 }
-
- 
 .header__title,
-.footer__title{
+.footer__title,
+.content__title {
     font-family: 'Shrikhand', cursive;
 }
 .section__title {
     margin-bottom: 3rem;
 }
-
 .title {
     font-size: 2.2rem;
     font-weight: 600;
     }
-
 .header{
     height: 6rem;  
     align-content: center;  
@@ -116,8 +114,6 @@
     &__btn:hover {
         transform: translateY(-0.25em);
         box-shadow: 0 0.5em 0.5em -0.4em rgba(86, 88, 92, 0.22);
-       
-
     }
     &__btn:active {
         transform: translateY(-.1rem);
@@ -204,9 +200,6 @@
         font-size: 1.6rem;
         font-weight: 500;
     }
-    
-    
-    
 }
 /***********************************/
 /*      SECTION RESTAURANTS        */
@@ -224,13 +217,12 @@
             text-align: center;
         }
     }
-    
     .menus{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
+        
         @include respond(tab_land) {
             flex-direction: row;
             flex-wrap: wrap;
@@ -280,24 +272,93 @@
             font-weight: 200;
         }
         &__like-box {
-            width: 30%;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-        }    
-        &__like {
-            font-size: 2.5rem;
-            color: $color-black;
+            @include like-box;
         }
     }   
 }
 
+main img {
+    width: 100%;
+    position: relative;
+}
+// .content {
+//     width: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     border: 1px solid chartreuse;
+//     border-top-left-radius: 2.5rem;
+//     border-top-right-radius: 2.5rem;
+// }
+.menu__carte {
+    position: absolute;
+    top: 23.1rem;
+    background-color: $color-grey;
+    width: 100%;
+    padding: 2.5rem;
+    border-top-right-radius: 2.8rem;
+    border-top-left-radius: 2.8rem;
+    border: 1px solid black;
+    .name {
+        display: flex;
+        flex-direction: row;
+        height: 3rem;
+        .content__title {
+            width: 100%;         
+            & h2 {
+                font-size: 3rem;
+            }         
+        } 
+        .like-box{
+            @include like-box;      
+        }     
+    }
+    .entree {
+        display: flex;
+        flex-direction: column;
+        margin-top: 3rem;
+        & .carte-title {
+            @include title;
+        }
+        & .composition {
+            margin-top: 2rem;
+            @extend %mb;
+        }
+    }
+    .btn {
+        @include grey-btn;
+    }
+}
+.compo-btn {
+    display: flex;
+    color: black;
+    width: 100%;
+    & .btn-body {
+        line-height: 2.5rem;
+        width: 80%;
+        padding: 1rem;
+        & .title-btn {
+            font-size: 1.9rem;
+            font-weight: 500;
+        }
+        & p {
+            @include subtitle;
+        }
+    }
+    & .btn-price {
+        width: 20%;
+        display: flex;
+        align-items: end;
+        justify-content: end;
+        padding: 1rem;
+    }
+    
+}
 /***********************************/
 /*             FOOTER              */
 /***********************************/
 footer {
     background-color: $color-footer;
-    min-height: 20rem;
+    position: relative;
     .footer__title {
         font-size: 1.8rem;
         color: $color-text-light;

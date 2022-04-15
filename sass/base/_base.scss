@@ -36,6 +36,7 @@ a:hover{text-decoration: none;}
 ul li{list-style: none;}
 img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
+
 /*--------------------*/
 // 1 rem = 8px, 8/16 = 50% 
 html {
@@ -57,32 +58,28 @@ html {
     @include respond(tablette) { //1000px
         font-size: 80%;
     }
-
     @include respond(desktop) {
         font-size: 85%;
     }
-
     @include respond(desktop_m) { //1300px
         .menus{
             row-gap: 3rem;
             column-gap: 4rem;
         }
     }
-
     @include respond(desktop_l) { //1600px
         .menus{
             column-gap: 6rem;
         }
     }
-
     @include respond(big_desktop) {
         font-size: 100%;
     }
 }
+
 body {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    margin: 0 auto;
     font-family: 'Roboto', sans-serif;
 }
+

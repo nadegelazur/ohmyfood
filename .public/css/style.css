@@ -155,8 +155,6 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  margin: 0 auto;
   font-family: "Roboto", sans-serif;
 }
 
@@ -164,17 +162,36 @@ body {
 Logo et Titre: Shrikhand (font-family: 'Shrikhand', cursive;)
 Texte: Roboto
 */
+.bg__image {
+  max-width: 100%;
+  min-height: 32rem;
+  object-fit: cover;
+}
+
+.menu {
+  margin-top: -4rem;
+  border-radius: 2rem 2rem 0 0;
+  background-color: #f6f6f6;
+  z-index: 1000;
+  position: relative;
+}
+
+.menu__header {
+  display: flex;
+}
+
 /*======== Modèles ========*/
-.resto .menu, .fonction__btn, .reserv__btn:link, .reserv__btn:visited {
+.menu__carte .btn, .resto .menu, .fonction__btn, .reserv__btn:link, .reserv__btn:visited {
   box-shadow: 0.5rem 0.6rem 0.7rem rgba(86, 88, 92, 0.22);
 }
 
-.fonction__btn {
+.menu__carte .btn, .menu__carte .entree .composition, .fonction__btn {
   margin-bottom: 2.5rem;
 }
 
 .header__title,
-.footer__title {
+.footer__title,
+.content__title {
   font-family: "Shrikhand", cursive;
 }
 
@@ -424,9 +441,96 @@ Texte: Roboto
   align-items: center;
   justify-content: flex-end;
 }
-.resto .menu__like {
+.resto .menu__like-box .like {
   font-size: 2.5rem;
   color: #000;
+}
+
+main img {
+  width: 100%;
+  position: relative;
+}
+
+.menu__carte {
+  position: absolute;
+  top: 23.1rem;
+  background-color: #f6f6f6;
+  width: 100%;
+  padding: 2.5rem;
+  border-top-right-radius: 2.8rem;
+  border-top-left-radius: 2.8rem;
+  border: 1px solid black;
+}
+.menu__carte .name {
+  display: flex;
+  flex-direction: row;
+  height: 3rem;
+}
+.menu__carte .name .content__title {
+  width: 100%;
+}
+.menu__carte .name .content__title h2 {
+  font-size: 3rem;
+}
+.menu__carte .name .like-box {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.menu__carte .name .like-box .like {
+  font-size: 2.5rem;
+  color: #000;
+}
+.menu__carte .entree {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+.menu__carte .entree .carte-title {
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  font-weight: 200;
+}
+.menu__carte .entree .composition {
+  margin-top: 2rem;
+}
+.menu__carte .btn {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  color: #000;
+  width: 100%;
+  height: 7.2rem;
+  border-radius: 1.8rem;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.compo-btn {
+  display: flex;
+  color: black;
+  width: 100%;
+}
+.compo-btn .btn-body {
+  line-height: 2.5rem;
+  width: 80%;
+  padding: 1rem;
+}
+.compo-btn .btn-body .title-btn {
+  font-size: 1.9rem;
+  font-weight: 500;
+}
+.compo-btn .btn-body p {
+  font-size: 1.7rem;
+  font-weight: 200;
+}
+.compo-btn .btn-price {
+  width: 20%;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  padding: 1rem;
 }
 
 /***********************************/
@@ -434,7 +538,7 @@ Texte: Roboto
 /***********************************/
 footer {
   background-color: #353535;
-  min-height: 20rem;
+  position: relative;
 }
 footer .footer__title {
   font-size: 1.8rem;
