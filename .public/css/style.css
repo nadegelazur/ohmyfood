@@ -26,6 +26,33 @@ Tertaire (bluemarine): #99E2D0;
 /*** colors ***/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,200&family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,200&family=Roboto:wght@100;300;400;500;700&family=Shrikhand&display=swap");
+.wrapper,
+.ball {
+  width: 0.2rem;
+  height: 0.2rem;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.ball {
+  position: absolute;
+  border-radius: 0.2rem;
+}
+.ball-1 {
+  background-color: blue;
+}
+.ball-2 {
+  background-color: red;
+}
+.ball-3 {
+  background-color: greenyellow;
+}
+.ball-4 {
+  background-color: yellow;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -162,6 +189,33 @@ body {
 Logo et Titre: Shrikhand (font-family: 'Shrikhand', cursive;)
 Texte: Roboto
 */
+.header {
+  padding: 1rem;
+  box-shadow: 0 0 0.5rem #00000066;
+  position: relative;
+  z-index: 1000;
+}
+.header a .arrow__back {
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 2rem;
+  width: 2rem;
+  height: 2rem;
+  color: #000;
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.header .logo {
+  margin-top: 1rem;
+  text-align: center;
+  font-family: "Shrikhand", "cursive";
+  font-size: 3rem;
+}
+
 .bg__image {
   max-width: 100%;
   min-height: 32rem;
@@ -170,14 +224,150 @@ Texte: Roboto
 
 .menu {
   margin-top: -4rem;
-  border-radius: 2rem 2rem 0 0;
+  border-radius: 3rem 3rem 0 0;
   background-color: #f6f6f6;
   z-index: 1000;
   position: relative;
 }
-
+@media (min-width: 62.5em) {
+  .menu {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 .menu__header {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 2.5rem 0 1.5rem;
+}
+.menu__header h2 {
+  font-family: Shrikhand, "cursive";
+  margin: 1.2rem 0;
+  font-size: 3rem;
+}
+@media (min-width: 62.5em) {
+  .menu__header h2 {
+    margin: 2rem auto;
+  }
+}
+.menu__header .card__heart {
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  background: transparent;
+}
+.menu__header .card__heart i {
+  font-size: 2.5rem;
+  position: absolute;
+}
+.menu__header .card__heart .heart__color {
+  opacity: 0;
+}
+.menu__cards {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 62.5em) {
+  .menu__cards {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+.menu__card {
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0 1rem;
+}
+.menu__card h3 {
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 0.5rem;
+  font-weight: 300;
+  font-size: 1.8rem;
+  margin: 1.2rem 0;
+}
+@media (min-width: 62.5em) {
+  .menu__card h3 {
+    text-align: center;
+  }
+}
+.menu__card h3::after {
+  content: "";
+  background: #99e2d0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 3rem;
+  height: 0.25rem;
+}
+@media (min-width: 62.5em) {
+  .menu__card h3::after {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.menu__card .menu__item {
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: 1rem;
+  display: flex;
+  box-shadow: 0.25rem 0.25rem 1rem #0000001a;
+  overflow: hidden;
+  margin: 1.8rem 0;
+  cursor: pointer;
+  max-width: 100%;
+}
+.menu__card .menu__item--text {
+  flex: 1;
+  overflow: hidden;
+  line-height: 2.5rem;
+}
+.menu__card .menu__item--text h4 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+.menu__card .menu__item--text p {
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 1.6rem;
+  font-weight: 200;
+}
+.menu__card .menu__item--price {
+  font-size: 1.6rem;
+  font-weight: 400;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  margin: 0.5rem;
+}
+
+.btn__cards {
+  padding: 4rem 0 6rem 0;
+  display: flex;
+  justify-content: center;
+}
+.btn__cards .btn__buy {
+  padding: 1.75rem 5.5rem;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.25s;
+  box-shadow: 0.25rem 0.25rem 10px #00000045;
+  border-radius: 5rem;
+  background: #686868 linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+  font-size: 1.8rem;
+  font-weight: 400;
 }
 
 /*======== Modèles ========*/
@@ -205,7 +395,7 @@ Texte: Roboto
 }
 
 .header {
-  height: 6rem;
+  height: 6.5rem;
   align-content: center;
 }
 .header__title {
@@ -548,6 +738,7 @@ footer .footer__title {
 
 .navigation {
   list-style: none;
+  margin-bottom: 4rem;
 }
 .navigation li {
   margin-left: 2rem;

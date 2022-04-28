@@ -33,8 +33,10 @@
     font-size: 2.2rem;
     font-weight: 600;
     }
+
+
 .header{
-    height: 6rem;  
+    height: 6.5rem;  
     align-content: center;  
     &__title {
         margin-top: 2rem;
@@ -46,14 +48,7 @@
            
     }
 }
-// .header h1 {
-//     animation-name: moveInLeft;
-    
-// }
-// .go-back-icon{
-//     animation: moveInLeft;
-//     animation-duration: 5s;
-// }
+
 .reservation {
     text-align: center;
 }
@@ -108,12 +103,16 @@
         padding: 1.5rem 2.3rem;
         color: $color-text-light;
         @extend %shadow;
-        transition: all .25s;
+        transition: all 1s;
         font-size: 1.5rem;
+        transition-property: color, background-color;
+        transition-timing-function:ease-out;
     } 
     &__btn:hover {
         transform: translateY(-0.25em);
         box-shadow: 0 0.5em 0.5em -0.4em rgba(86, 88, 92, 0.22);
+        background-image: linear-gradient( 45deg, $color-violet, 20%, $color-pink);
+        
     }
     &__btn:active {
         transform: translateY(-.1rem);
@@ -124,7 +123,6 @@
 /*      SECTION FONCTIONNEMENT        */
 /***********************************/ 
 .fonction {
-    background-color: beige;
     padding: 3rem 2.5rem;
     .section__body {
         margin-top: 3rem;
@@ -179,19 +177,15 @@
         text-align: center;
         @extend %mb;
     }
-    &__btn:hover
-    {
-        background-color: $color-btn-clair;
-    }
+    &__btn:hover {
+        background-color: $color-btn-clair;   
+    } 
     & .body-btn {
         color: $color-black; 
     }
     & .body-btn i {
         font-size: 2rem;
         color: grey;
-    }
-    & .body-btn i:active {
-        color: $color-violet;
     }
     & .icon-btn{
         margin-right: 2rem;
@@ -200,6 +194,9 @@
         font-size: 1.6rem;
         font-weight: 500;
     }
+}
+.fonction__btn:hover i{
+    color: $color-violet;
 }
 /***********************************/
 /*      SECTION RESTAURANTS        */
@@ -217,142 +214,116 @@
             text-align: center;
         }
     }
-    .menus{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        
-        @include respond(tab_land) {
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
-    }
-    .menu{
-        width: 32rem;
-        height: 25rem;
-        margin: 0  .2rem;
-        @extend %shadow;
-        background-color: #fff;
-        border-radius: 1.5rem;
-        margin-bottom: 1.8rem; 
-        
-        @include respond(desktop_m) {
-            width: 40rem;
-        }
-        &__hero {
-            height: 17.5rem;
-            border-top-left-radius: 1.5rem;
-            border-top-right-radius: 1.5rem;
-            position: relative;
-            overflow: hidden;  
-        }
-        &__hero img{
-            width: 100%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        } 
-        &__info {
-            padding: 1rem 2rem 1rem 1rem;
+    .menus {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            @include respond(tab_land) {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .menu{
+                width: 32rem;
+                height: 25rem;
+                margin: 0  .2rem;
+                @extend %shadow;
+                background-color: #fff;
+                border-radius: 1.5rem;
+                margin-bottom: 1.8rem; 
+                position: relative;
+        
+                transform: scale(1, 1);
+                transition: all 0.8s ease 0s;
+        
+                @include respond(desktop_m) {
+                    width: 40rem;
+                }
+                &__hero {
+                    height: 17.5rem;
+                    border-top-left-radius: 1.5rem;
+                    border-top-right-radius: 1.5rem;
+                    position: relative;
+                    overflow: hidden;  
+                }
+                &__hero img{
+                    width: 100%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                } 
+                & .menu__badge--new {
+                    background: #99e1cf;
+                    color: #138668;
+                    padding: 1rem 2rem;
+                    border-radius: 0.125rem;
+                    position: absolute;
+                    top: 1.5rem;
+                    right: 1.75rem;
+                }
+                &__info {
+                    padding: 1rem 2rem 1rem 1rem;
+                    display: flex;
+                    flex-direction: row;
+                }
+                &__details {
+                    width: 70%;
+                }
+                &__title {
+                    font-size: 1.8rem;
+                    font-weight: 600;
+                    line-height: 1.8;
+                }
+                &__description {
+                    font-size: 1.7rem;
+                    font-weight: 200;
+                }
+                &__like-box {
+                    width: 9rem;
+                    height: 5rem;
+                    padding: 0;
+                    display: flex;
+                    justify-content: end;
+                    align-items: center;
+                    cursor: pointer;
+                    position: relative;
+                    background: transparent;
+                    &:hover i{
+                        .heart{
+                            opacity: 0;
+                        }
+                        .heart__color {
+                            opacity: 1;
+                            color: linear-gradient(0deg,#9356dc,#ff79da);
+                            transition: all 0.5s;
+                        }
+                    } 
+
+
+                    i {
+                        font-size: 2rem;
+                        position: absolute;
+                    }
+
+                    // .heart__color {
+                    //     opacity: 0;
+
+                    //     &:hover { 
+                    //         opacity: 1;
+                    //         color: linear-gradient(0deg,#9356dc,#ff79da);
+                    //         transition: all 0.5s;
+                    //     }
+                    // }
+                }           
+            }
         }
-        &__details {
-            width: 70%;
-        }
-        &__title {
-            font-size: 1.8rem;
-            font-weight: 600;
-            line-height: 1.8;
-        }
-        &__description {
-            font-size: 1.7rem;
-            font-weight: 200;
-        }
-        &__like-box {
-            @include like-box;
-        }
+    .menu:hover {
+        transform: scale(1.05);
     }   
 }
 
-main img {
-    width: 100%;
-    position: relative;
-}
-// .content {
-//     width: 100%;
-//     display: flex;
-//     flex-direction: column;
-//     border: 1px solid chartreuse;
-//     border-top-left-radius: 2.5rem;
-//     border-top-right-radius: 2.5rem;
-// }
-.menu__carte {
-    position: absolute;
-    top: 23.1rem;
-    background-color: $color-grey;
-    width: 100%;
-    padding: 2.5rem;
-    border-top-right-radius: 2.8rem;
-    border-top-left-radius: 2.8rem;
-    border: 1px solid black;
-    .name {
-        display: flex;
-        flex-direction: row;
-        height: 3rem;
-        .content__title {
-            width: 100%;         
-            & h2 {
-                font-size: 3rem;
-            }         
-        } 
-        .like-box{
-            @include like-box;      
-        }     
-    }
-    .entree {
-        display: flex;
-        flex-direction: column;
-        margin-top: 3rem;
-        & .carte-title {
-            @include title;
-        }
-        & .composition {
-            margin-top: 2rem;
-            @extend %mb;
-        }
-    }
-    .btn {
-        @include grey-btn;
-    }
-}
-.compo-btn {
-    display: flex;
-    color: black;
-    width: 100%;
-    & .btn-body {
-        line-height: 2.5rem;
-        width: 80%;
-        padding: 1rem;
-        & .title-btn {
-            font-size: 1.9rem;
-            font-weight: 500;
-        }
-        & p {
-            @include subtitle;
-        }
-    }
-    & .btn-price {
-        width: 20%;
-        display: flex;
-        align-items: end;
-        justify-content: end;
-        padding: 1rem;
-    }
-    
-}
 /***********************************/
 /*             FOOTER              */
 /***********************************/
@@ -367,6 +338,7 @@ footer {
 }
 .navigation {
     list-style: none;
+    margin-bottom: 4rem;
     
     li {
         margin-left: 2rem;

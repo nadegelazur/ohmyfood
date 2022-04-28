@@ -43,17 +43,7 @@ ORDER
         @media (min-width: 112.5em) {@content}; //1800px
     }
 }
-// Like's
-@mixin like-box {
-    width: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    .like {
-        font-size: 2.5rem;
-        color: $color-black;
-    }
-}
+
 // Button's
 @mixin grey-btn {
     display: flex;

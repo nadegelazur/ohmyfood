@@ -8,6 +8,15 @@
     <title>commande de repas en ligne | Ohmyfood</title>
 </head>
 <body>
+    <!-- Animation Loader -->    
+<div class="loader">
+    <div class="ball ball-1"></div>
+    <div class="ball ball-2"></div>
+    <div class="ball ball-3"></div>
+    <div class="ball ball-4"></div>
+ 
+ </div>
+
 <!-- Header -->
     <header class="header">
         <div class="header__btn">
@@ -19,6 +28,7 @@
             <h1>ohmyfood</h1>
         </div>
     </header>
+
     <main>
 <!-- section Réservation -->
         <form class="reservation">
@@ -102,7 +112,8 @@
                         <figure class="menu">
                             <a class="menu__link" href="menu_1.html">
                                 <div class="menu__hero">
-                                    <img src="./sass/img/restaurants/palette.jpg" alt="photo"> 
+                                    <img src="./sass/img/restaurants/palette.jpg" alt="photo">
+                                    <span class="menu__badge--new">Nouveau</span> 
                                 </div>
                             </a>    
                             <div class="menu__info">
@@ -112,10 +123,10 @@
                                 </figcaption>
                                         
                                 <div class="menu__like-box">
-                                    <a class="menu__like like like--empty" href="#">
-                                        <i class="fa-regular fa-heart"></i>
-                                    </a>
+                                    <i class="fa-regular fa-heart"></i>
+                                    <i class="fa-regular fa-heart heart__color"></i>     
                                 </div>
+
                             </div>                                              
                         </figure>
 
@@ -123,6 +134,7 @@
                             <a class="menu__link" href="menu_2.html">
                                 <div class="menu__hero">
                                     <img src="./sass/img/restaurants/lanote.jpg" alt="photo"> 
+                                    <span class="menu__badge--new">Nouveau</span>
                                 </div>
                             </a>
                             <div class="menu__info">
@@ -130,11 +142,12 @@
                                     <h3 class="menu__title">La note enchantée</h3>
                                     <p class="menu__description">Charonne</p>
                                 </figcaption>
-                                <div class="menu__like-box">
-                                    <a class="menu__like like like--empty" href="#">
-                                        <i class="fa-regular fa-heart"></i>
-                                    </a>
+
+                                <div class="menu__like-box">                       
+                                    <i class="fa-regular fa-heart"></i>  
+                                    <i class="fa-regular fa-heart heart__color"></i>                 
                                 </div>
+
                             </div>                       
                         </figure>
 
@@ -149,15 +162,34 @@
                                     <h3 class="menu__title">A la française</h3>
                                     <p class="menu__description">Cité Rouge</p>
                                 </figcaption>
-                                <div class="menu__like-box">
-                                    <a class="menu__like like like--empty" href="#">
-                                        <i class="fa-regular fa-heart"></i>
-                                    </a>
+
+                                <div class="menu__like-box">                       
+                                    <i class="fa-regular fa-heart"></i>  
+                                    <i class="fa-regular fa-heart heart__color"></i>                 
                                 </div>
                             </div>
                         </figure>
 
                         <figure class="menu">
+                            <a class="menu__link" href="menu_4.html">
+                                <div class="menu__hero">
+                                    <img src="./sass/img/restaurants/delice.jpg" alt="photo">
+                                </div>
+                            </a>
+                            <div class="menu__info">
+                                <figcaption class="menu__details">
+                                    <h3 class="menu__title">Le delice des sens</h3>
+                                    <p class="menu__description">Folie-Méricourt</p>
+                                </figcaption>
+                                
+                                <div class="menu__like-box">                       
+                                    <i class="fa-regular fa-heart heart"></i>   
+                                    <i class="fa-solid fa-heart heart__color"></i>              
+                                </div>
+                            </div>
+                        </figure>
+
+                        <!-- <figure class="menu">
                             <a class="menu__link" href="menu_4.html"></a>
                                 <div class="menu__hero">
                                     <img src="./sass/img/restaurants/delice.jpg" alt="photo">
@@ -175,7 +207,7 @@
                                 </div>
                             </div>
                             
-                        </figure>
+                        </figure> -->
                     </div>
                 </div>
         </section>
