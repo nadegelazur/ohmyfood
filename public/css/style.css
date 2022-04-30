@@ -16,6 +16,14 @@ ORDER
 
 1em = 16px
 */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,200&family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,200&family=Roboto:wght@100;300;400;500;700&family=Shrikhand&display=swap");
+@media (min-width: 62.5em) {
+  h2 .section__title {
+    text-align: center;
+  }
+}
+
 /*
  ======= Couleurs ==========
 Primaire (violet): #9356DC;
@@ -24,8 +32,6 @@ Tertaire (bluemarine): #99E2D0;
 */
 /*======== Variables ========*/
 /*** colors ***/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,200&family=Shrikhand&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,200&family=Roboto:wght@100;300;400;500;700&family=Shrikhand&display=swap");
 .loader,
 .ball {
   width: 1rem;
@@ -223,6 +229,7 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------*/
 html {
   font-size: 62.5%;
+  font-family: "Roboto", sans-serif;
 }
 @media (min-width: 37.5em) {
   html {
@@ -267,16 +274,15 @@ html {
   }
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  font-family: "Roboto", sans-serif;
-}
-
 /* ======= Polices ===========
 Logo et Titre: Shrikhand (font-family: 'Shrikhand', cursive;)
 Texte: Roboto
 */
+.title {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
 .header {
   padding: 1rem;
   box-shadow: 0 0 0.5rem #00000066;
@@ -317,13 +323,6 @@ Texte: Roboto
   z-index: 1000;
   position: relative;
 }
-@media (min-width: 62.5em) {
-  .menu {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
 .menu__header {
   display: flex;
   align-items: center;
@@ -355,25 +354,27 @@ Texte: Roboto
   font-size: 2.5rem;
   position: absolute;
 }
+.menu__header .card__heart i:hover {
+  opacity: 0;
+}
 .menu__header .card__heart .heart__color {
   opacity: 0;
 }
-.menu__cards {
+.menu__header .card__heart .heart__color:hover {
+  opacity: 1;
+  background: linear-gradient(0deg, #9356dc, #ff79da);
+  transition: all 0.5s;
+}
+.menu .menu__cards {
   display: flex;
   flex-direction: column;
 }
-@media (min-width: 62.5em) {
-  .menu__cards {
-    flex-direction: row;
-    justify-content: center;
-  }
-}
-.menu__card {
+.menu .menu__cards .menu__card {
   max-width: 100%;
   overflow: hidden;
   padding: 0 1rem;
 }
-.menu__card h3 {
+.menu .menu__cards .menu__card h3 {
   text-transform: uppercase;
   position: relative;
   padding-bottom: 0.5rem;
@@ -382,11 +383,11 @@ Texte: Roboto
   margin: 1.2rem 0;
 }
 @media (min-width: 62.5em) {
-  .menu__card h3 {
+  .menu .menu__cards .menu__card h3 {
     text-align: center;
   }
 }
-.menu__card h3::after {
+.menu .menu__cards .menu__card h3::after {
   content: "";
   background: #99e2d0;
   position: absolute;
@@ -396,12 +397,12 @@ Texte: Roboto
   height: 0.25rem;
 }
 @media (min-width: 62.5em) {
-  .menu__card h3::after {
+  .menu .menu__cards .menu__card h3::after {
     left: 50%;
     transform: translate(-50%, -50%);
   }
 }
-.menu__card .menu__item {
+.menu .menu__cards .menu__card .menu__item {
   background: #fff;
   border-radius: 1.5rem;
   padding: 1rem;
@@ -411,74 +412,78 @@ Texte: Roboto
   margin: 1.8rem 0;
   cursor: pointer;
   max-width: 100%;
-  transform: rotate(0deg);
-  transition: all 0.8s ease 0s;
+  animation: checkMenu 0.6s;
+  animation-timing-function: cubic-bezier(0.67, 0.22, 0.35, 0.86);
+  animation-fill-mode: both;
+  transform: scale(0);
 }
-.menu__card .menu__item--text {
+.menu .menu__cards .menu__card .menu__item--text {
   flex: 1;
   overflow: hidden;
   line-height: 2.5rem;
 }
-.menu__card .menu__item--text h4 {
+.menu .menu__cards .menu__card .menu__item--text h4 {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   font-size: 1.8rem;
   font-weight: 400;
 }
-.menu__card .menu__item--text p {
+.menu .menu__cards .menu__card .menu__item--text p {
   margin: 0;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   font-size: 1.6rem;
   font-weight: 200;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
-.menu__card .menu__item--price {
+.menu .menu__cards .menu__card .menu__item--price {
   font-size: 1.6rem;
   font-weight: 400;
   display: flex;
   justify-content: end;
   align-items: end;
   margin: 0.5rem;
+  padding-left: 0.5rem;
 }
-.menu__card .menu__item i {
-  color: #99E2D0;
-  font-size: 2.5rem;
-  transform: translate(14%, 50%);
-}
-
-.menu__item:hover .menu__item--validation {
-  width: 22%;
-}
-
-.menu__item--validation {
-  width: 9rem;
+.menu .menu__cards .menu__card .menu__item--validation {
+  background: #99e2d0;
+  margin: -1rem -7rem -1rem 1rem;
+  width: 6rem;
   display: flex;
   justify-content: center;
   align-items: center;
   transition-duration: 0.5s;
-  background-color: #99E2D0;
-  margin: -2rem -10rem -1rem 1rem;
 }
-
-.menu__item--icon:hover {
-  width: 1.6rem;
-  height: 1.6rem;
+.menu .menu__cards .menu__card .menu__item--icon {
+  width: 2rem;
+  height: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 100px;
-  transform: rotate(-360deg);
-  opacity: 1;
+  transform: rotate(360deg);
+  transition-duration: 0.5s;
 }
-
-.btn__cards {
+.menu .menu__cards .menu__card .menu__item--icon i {
+  color: #fff;
+  font-size: 2rem;
+}
+.menu .menu__cards .menu__card .menu__item:hover .menu__item--validation {
+  margin-right: -1rem;
+}
+.menu .menu__cards .menu__card .menu__item:hover .menu__item--icon {
+  transform: rotate(0);
+}
+.menu .btn__cards {
   padding: 4rem 0 6rem 0;
   display: flex;
   justify-content: center;
 }
-.btn__cards .btn__buy {
+.menu .btn__cards .btn__buy {
   padding: 1.75rem 5.5rem;
   color: #fff;
   cursor: pointer;
@@ -489,17 +494,38 @@ Texte: Roboto
   font-size: 1.8rem;
   font-weight: 400;
 }
-.btn__cards .btn__buy:hover {
+.menu .btn__cards .btn__buy:hover {
   background: #f1ccf99c linear-gradient(45deg, rgba(147, 86, 220, 0.9), 20%, rgba(255, 121, 218, 0.9));
   box-shadow: 0.25rem 0.25rem 10px #fcfcfc45;
 }
 
+@media screen and (min-width: 1024px) {
+  .menu .menu__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .menu {
+    width: 70%;
+    margin: -4rem auto 0 auto;
+  }
+}
+@keyframes checkMenu {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 /*======== Modèles ========*/
-.resto .menus .menu, .fonction__btn, .reserv__btn:link, .reserv__btn:visited {
+.resto .cards .card, .fonctionment .container ul li, .reservation .info__btn:link, .reservation .info__btn:visited {
   box-shadow: 0.5rem 0.6rem 0.7rem rgba(86, 88, 92, 0.22);
 }
 
-.fonction__btn {
+.fonctionment .container ul li {
   margin-bottom: 2.5rem;
 }
 
@@ -513,12 +539,11 @@ Texte: Roboto
   margin-bottom: 3rem;
 }
 
-.title {
-  font-size: 2.2rem;
-  font-weight: 600;
-}
-
+/*******************/
+/*      HEADER     */
+/*******************/
 .header {
+  width: 100%;
   height: 6.5rem;
   align-content: center;
 }
@@ -531,56 +556,53 @@ Texte: Roboto
   text-align: center;
 }
 
+/*********************/
+/* SECTION  LOCATION */
+/*********************/
 .reservation {
   text-align: center;
 }
-
-.reserv {
-  background-color: #f6f6f6;
-  height: auto;
-  padding: 3.5rem;
-  position: relative;
-}
-.reserv__location {
+.reservation .location {
+  text-align: center;
   background-color: #eaeaea;
   height: 4.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.reserv__location .location {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 5rem;
-}
-.reserv__location i {
+.reservation .location i {
   font-size: 1.8rem;
 }
-.reserv__location .input-location {
+.reservation .location__input {
   background-color: #eaeaea;
   height: 3.5rem;
   margin-left: 2rem;
   font-size: 1.5rem;
 }
-.reserv__title {
+.reservation .info {
+  background-color: #f6f6f6;
+  height: auto;
+  padding: 3.5rem;
+  position: relative;
+}
+.reservation .info h2 {
   display: block;
   padding-bottom: 1.5rem;
   font-weight: 600;
   font-size: 2.5rem;
   line-height: 1.2;
 }
-.reserv__subtitle {
+.reservation .info p {
   display: block;
   padding-bottom: 2rem;
   font-weight: 200;
   font-size: 1.7rem;
   line-height: 1.3;
 }
-.reserv .button {
-  margin: 3rem;
+.reservation .info a {
+  display: inline-block;
 }
-.reserv__btn:link, .reserv__btn:visited {
+.reservation .info__btn:link, .reservation .info__btn:visited {
   background-image: linear-gradient(to bottom, #FF79DA, #9356DC);
   border-radius: 2.5rem;
   padding: 1.5rem 2.3rem;
@@ -590,66 +612,47 @@ Texte: Roboto
   transition-property: color, background-color;
   transition-timing-function: ease-out;
 }
-.reserv__btn:hover {
-  transform: translateY(-0.25em);
+.reservation .info__btn:hover {
+  transform: translateY(-0.1em);
   box-shadow: 0 0.5em 0.5em -0.4em rgba(86, 88, 92, 0.22);
   background-image: linear-gradient(45deg, #9356DC, 20%, #FF79DA);
 }
-.reserv__btn:active {
+.reservation .info__btn:active {
   transform: translateY(-0.1rem);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 /***********************************/
-/*      SECTION FONCTIONNEMENT        */
+/*      SECTION FONCTIONNEMENT     */
 /***********************************/
-.fonction {
+.fonctionment {
   padding: 3rem 2.5rem;
 }
-.fonction .section__body {
-  margin-top: 3rem;
+.fonctionment .container {
   margin-bottom: 1rem;
 }
-@media (min-width: 62.5em) {
-  .fonction .section__title {
-    text-align: center;
-  }
-}
-.fonction__btns {
+.fonctionment .container ul {
+  counter-reset: ListCount;
+  margin: 3rem auto;
+  margin: 3rem auto;
+  justify-content: center;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-@media (min-width: 62.5em) {
-  .fonction__btns {
+@media (min-width: 56.25em) {
+  .fonctionment .container ul {
     flex-direction: row;
-    justify-content: center;
     flex-wrap: wrap;
-    column-gap: 2.5rem;
+    gap: 2rem;
   }
 }
-.fonction__btns .global__btn {
-  position: relative;
-}
-.fonction__btns .global__btn .number-btn {
-  width: 2.5rem;
-  height: 2.5rem;
-  background-color: #9356DC;
-  color: #fff;
-  border-radius: 100%;
+.fonctionment .container ul li {
+  padding: 1.5rem;
+  background: #f6f6f6;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 38%;
-  left: 1%;
-  transform: translate(-50%, -50%);
-}
-.fonction__btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f6f6f6;
   color: #000;
   width: 32rem;
   height: 7.2rem;
@@ -657,27 +660,44 @@ Texte: Roboto
   font-weight: 400;
   font-size: 1.5rem;
   text-align: center;
+  position: relative;
 }
-.fonction__btn:hover {
-  background-color: #F5EDFF;
+@media (min-width: 56.25em) {
+  .fonctionment .container ul li {
+    width: 40rem;
+  }
 }
-.fonction .body-btn {
-  color: #000;
+.fonctionment .container ul li:before {
+  counter-increment: ListCount 1;
+  content: counter(ListCount);
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1rem;
+  background-color: #9356DC;
+  color: #fff;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(-50%, -50%);
 }
-.fonction .body-btn i {
+.fonctionment .container ul li i {
   font-size: 2rem;
   color: grey;
-}
-.fonction .icon-btn {
   margin-right: 2rem;
 }
-.fonction .title-btn {
+.fonctionment .container ul li:hover {
+  background-color: #F5EDFF;
+}
+.fonctionment .container ul li:hover i {
+  color: #9356DC;
+}
+.fonctionment .container ul li span .title-btn {
   font-size: 1.6rem;
   font-weight: 500;
-}
-
-.fonction__btn:hover i {
-  color: #9356DC;
 }
 
 /***********************************/
@@ -688,27 +708,24 @@ Texte: Roboto
   height: auto;
   padding: 2.5rem 1.5rem;
 }
-.resto .section__body {
+.resto .container {
   margin: 3rem 0rem;
 }
-@media (min-width: 62.5em) {
-  .resto .section__title {
-    text-align: center;
-  }
-}
-.resto .menus {
+.resto .cards {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 @media (min-width: 56.25em) {
-  .resto .menus {
+  .resto .cards {
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 2rem;
   }
 }
-.resto .menus .menu {
+.resto .cards .card {
+  display: block;
   width: 32rem;
   height: 25rem;
   margin: 0 0.2rem;
@@ -719,26 +736,13 @@ Texte: Roboto
   transform: scale(1, 1);
   transition: all 0.8s ease 0s;
 }
-@media (min-width: 81.25em) {
-  .resto .menus .menu {
-    width: 40rem;
-  }
-}
-.resto .menus .menu__hero {
+.resto .cards .card img {
   height: 17.5rem;
-  border-top-left-radius: 1.5rem;
-  border-top-right-radius: 1.5rem;
-  position: relative;
-  overflow: hidden;
-}
-.resto .menus .menu__hero img {
   width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  border-radius: 1rem 1rem 0 0;
+  object-fit: cover;
 }
-.resto .menus .menu .menu__badge--new {
+.resto .cards .card__badge--new {
   background: #99e1cf;
   color: #138668;
   padding: 1rem 2rem;
@@ -747,24 +751,24 @@ Texte: Roboto
   top: 1.5rem;
   right: 1.75rem;
 }
-.resto .menus .menu__info {
+.resto .cards .card__info {
   padding: 1rem 2rem 1rem 1rem;
   display: flex;
   flex-direction: row;
 }
-.resto .menus .menu__details {
+.resto .cards .card__info .text {
   width: 70%;
 }
-.resto .menus .menu__title {
+.resto .cards .card__info .title {
   font-size: 1.8rem;
   font-weight: 600;
   line-height: 1.8;
 }
-.resto .menus .menu__description {
+.resto .cards .card__info span {
   font-size: 1.7rem;
   font-weight: 200;
 }
-.resto .menus .menu__like-box {
+.resto .cards .card__heart {
   width: 9rem;
   height: 5rem;
   padding: 0;
@@ -775,20 +779,27 @@ Texte: Roboto
   position: relative;
   background: transparent;
 }
-.resto .menus .menu__like-box:hover i .heart {
-  opacity: 0;
-}
-.resto .menus .menu__like-box:hover i .heart__color {
-  opacity: 1;
-  color: linear-gradient(0deg, #9356dc, #ff79da);
-  transition: all 0.5s;
-}
-.resto .menus .menu__like-box i {
-  font-size: 2rem;
+.resto .cards .card__heart i {
   position: absolute;
 }
-.resto .menu:hover {
-  transform: scale(1.05);
+.resto .cards .card__heart .fa-regular {
+  font-size: 2rem;
+}
+.resto .cards .card__heart .fa-regular:hover {
+  opacity: 0;
+}
+.resto .cards .card__heart .fa-solid {
+  font-size: 2rem;
+  opacity: 0;
+  color: #9933ff;
+}
+.resto .cards .card__heart .fa-solid:hover {
+  opacity: 1;
+}
+@media (min-width: 81.25em) {
+  .resto .cards .card {
+    width: 40rem;
+  }
 }
 
 /***********************************/
@@ -797,6 +808,7 @@ Texte: Roboto
 footer {
   background-color: #353535;
   position: relative;
+  padding: 1rem;
 }
 footer .footer__title {
   font-size: 1.8rem;

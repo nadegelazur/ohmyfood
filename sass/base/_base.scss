@@ -42,6 +42,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 html {
     // This defines what 1 rem is
     font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+    font-family: 'Roboto', sans-serif;
 
     @include respond(tab_port) { // width < ?
         font-size: 70%;
@@ -75,11 +76,5 @@ html {
     @include respond(big_desktop) {
         font-size: 100%;
     }
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    font-family: 'Roboto', sans-serif;
 }
 

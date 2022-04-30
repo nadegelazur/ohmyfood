@@ -29,13 +29,12 @@
 .section__title {
     margin-bottom: 3rem;
 }
-.title {
-    font-size: 2.2rem;
-    font-weight: 600;
-    }
 
-
+/*******************/
+/*      HEADER     */
+/*******************/ 
 .header{
+    width: 100%;
     height: 6.5rem;  
     align-content: center;  
     &__title {
@@ -44,159 +43,155 @@
     }
     &__title h1{    
         font-size: 3rem;
-        text-align: center;
-           
+        text-align: center;      
     }
 }
 
+/*********************/
+/* SECTION  LOCATION */
+/*********************/
 .reservation {
     text-align: center;
-}
-.reserv {
-    background-color: $color-grey;
-    height: auto;
-    padding: 3.5rem;
-    position: relative;
-    &__location{
+    .location {
+        text-align: center;
         background-color: #eaeaea;
         height: 4.5rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        & .location {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-left: 5rem;
-        }
-        & i{
+        & i {
             font-size: 1.8rem;
         }
-        .input-location{
+        &__input {
             background-color: #eaeaea;
             height: 3.5rem;
             margin-left: 2rem;
             font-size: 1.5rem;
         }
     }
-    &__title {
-        display: block;
-        padding-bottom: 1.5rem; 
-        font-weight: 600;  
-        font-size: 2.5rem; 
-        line-height: 1.2;
-    }
-    &__subtitle{
-        display: block;
-        padding-bottom: 2rem;
-        font-weight: 200;
-        font-size: 1.7rem;
-        line-height: 1.3;
-    }
-    .button {
-        margin: 3rem;
-    }
-    &__btn:link,
-    &__btn:visited {
-        background-image: linear-gradient( to bottom, $color-pink, $color-violet);
-        border-radius: 2.5rem;
-        padding: 1.5rem 2.3rem;
-        color: $color-text-light;
-        @extend %shadow;
-        transition: all 1s;
-        font-size: 1.5rem;
-        transition-property: color, background-color;
-        transition-timing-function:ease-out;
-    } 
-    &__btn:hover {
-        transform: translateY(-0.25em);
-        box-shadow: 0 0.5em 0.5em -0.4em rgba(86, 88, 92, 0.22);
-        background-image: linear-gradient( 45deg, $color-violet, 20%, $color-pink);
-        
-    }
-    &__btn:active {
-        transform: translateY(-.1rem);
-        box-shadow: 0 .5rem 1rem rgba($color-black,.2);
-    }
-}
-/***********************************/
-/*      SECTION FONCTIONNEMENT        */
-/***********************************/ 
-.fonction {
-    padding: 3rem 2.5rem;
-    .section__body {
-        margin-top: 3rem;
-        margin-bottom: 1rem;
-    }
-    .section__title {
-        @include respond (tablette) {
-            text-align: center;
-        }
-    }
-    &__btns {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        @include respond (tablette) {
-            flex-direction: row;
-            justify-content: center;
-            flex-wrap: wrap;
-            column-gap: 2.5rem;
-        }
-        & .global__btn {
-          position: relative; 
-          & .number-btn{
-            width: 2.5rem;
-            height: 2.5rem;
-            background-color: $color-violet;
-            color: $color-text-light;
-            border-radius: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;  
-            position: absolute;
-            top: 38%;
-            left: 1%;
-            transform: translate(-50%, -50%);
-            } 
-        }   
-    }
-    &__btn{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    
+    .info {
         background-color: $color-grey;
-        color: $color-black; 
-        width: 32rem;       
-        height: 7.2rem;
-        @extend %shadow;
-        border-radius: 1.8rem;
-        font-weight:400;
-        font-size: 1.5rem;
-        text-align: center;
-        @extend %mb;
-    }
-    &__btn:hover {
-        background-color: $color-btn-clair;   
-    } 
-    & .body-btn {
-        color: $color-black; 
-    }
-    & .body-btn i {
-        font-size: 2rem;
-        color: grey;
-    }
-    & .icon-btn{
-        margin-right: 2rem;
-    }
-    & .title-btn {
-        font-size: 1.6rem;
-        font-weight: 500;
+        height: auto;
+        padding: 3.5rem;
+        position: relative;   
+        & h2 {
+            display: block;
+            padding-bottom: 1.5rem; 
+            font-weight: 600;  
+            font-size: 2.5rem; 
+            line-height: 1.2;
+        }
+        & p {
+            display: block;
+            padding-bottom: 2rem;
+            font-weight: 200;
+            font-size: 1.7rem;
+            line-height: 1.3;
+        }
+        & a {
+            display: inline-block;
+        }
+        &__btn:link,
+        &__btn:visited {
+            background-image: linear-gradient( to bottom, $color-pink, $color-violet);
+            border-radius: 2.5rem;
+            padding: 1.5rem 2.3rem;
+            color: $color-text-light;
+            @extend %shadow;
+            transition: all 1s;
+            font-size: 1.5rem;
+            transition-property: color, background-color;
+            transition-timing-function:ease-out;
+        } 
+        &__btn:hover {
+            transform: translateY(-0.1em);
+            box-shadow: 0 0.5em 0.5em -0.4em rgba(86, 88, 92, 0.22);
+            background-image: linear-gradient( 45deg, $color-violet, 20%, $color-pink);
+            
+        }
+        &__btn:active {
+            transform: translateY(-.1rem);
+            box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+        }
     }
 }
-.fonction__btn:hover i{
-    color: $color-violet;
+
+/***********************************/
+/*      SECTION FONCTIONNEMENT     */
+/***********************************/ 
+.fonctionment {
+    padding: 3rem 2.5rem;
+    .container {
+        margin-bottom: 1rem;
+        ul {
+            counter-reset: ListCount;
+            margin: 3rem auto;
+            margin: 3rem auto;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            @include respond(tab_land) {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 2rem;
+            }
+            li {
+                padding: 1.5rem;
+                background: $color-grey;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: $color-black; 
+                width: 32rem;       
+                height: 7.2rem;
+                @extend %shadow;
+                border-radius: 1.8rem;
+                font-weight:400;
+                font-size: 1.5rem;
+                text-align: center;
+                @extend %mb;
+                position: relative;
+                @include respond(tab_land) {
+                    width:40rem;
+                }
+                
+                &:before {
+                    counter-increment: ListCount 1;
+                    content: counter(ListCount);
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    font-size: 1rem;
+                    background-color: $color-violet;
+                    color: $color-text-light;
+                    border-radius: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;  
+                    position: absolute;
+                    top: 50%;
+                    left: 0%;
+                    transform: translate(-50%, -50%);
+                }
+                i {
+                    font-size: 2rem;
+                    color: grey;
+                    margin-right: 2rem;
+                }          
+                &:hover {
+                    background-color: $color-btn-clair;
+                    i {
+                        color: $color-violet;
+                    }
+                }
+                span .title-btn {
+                    font-size: 1.6rem;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
 }
 /***********************************/
 /*      SECTION RESTAURANTS        */
@@ -205,26 +200,21 @@
     background-color: $color-grey;
     height: auto;
     padding: 2.5rem 1.5rem;
-    
-    .section__body {
+    .container {
         margin: 3rem 0rem;
     }
-    .section__title {
-        @include respond (tablette) {
-            text-align: center;
-        }
-    }
-    .menus {
+    .cards {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center;      
             @include respond(tab_land) {
                 flex-direction: row;
                 flex-wrap: wrap;
+                gap: 2rem;
             }
-            .menu{
+            .card{
+                display: block;
                 width: 32rem;
                 height: 25rem;
                 margin: 0  .2rem;
@@ -233,28 +223,15 @@
                 border-radius: 1.5rem;
                 margin-bottom: 1.8rem; 
                 position: relative;
-        
                 transform: scale(1, 1);
                 transition: all 0.8s ease 0s;
-        
-                @include respond(desktop_m) {
-                    width: 40rem;
-                }
-                &__hero {
+                img {
                     height: 17.5rem;
-                    border-top-left-radius: 1.5rem;
-                    border-top-right-radius: 1.5rem;
-                    position: relative;
-                    overflow: hidden;  
-                }
-                &__hero img{
                     width: 100%;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                } 
-                & .menu__badge--new {
+                    border-radius: 1rem 1rem 0 0;
+                    object-fit: cover;
+                }
+                &__badge--new{
                     background: #99e1cf;
                     color: #138668;
                     padding: 1rem 2rem;
@@ -267,20 +244,20 @@
                     padding: 1rem 2rem 1rem 1rem;
                     display: flex;
                     flex-direction: row;
+                    .text {
+                        width: 70%;
+                    }
+                    .title{
+                        font-size: 1.8rem;
+                        font-weight: 600;
+                        line-height: 1.8;
+                    }
+                    span {
+                        font-size: 1.7rem;
+                        font-weight: 200;
+                    }
                 }
-                &__details {
-                    width: 70%;
-                }
-                &__title {
-                    font-size: 1.8rem;
-                    font-weight: 600;
-                    line-height: 1.8;
-                }
-                &__description {
-                    font-size: 1.7rem;
-                    font-weight: 200;
-                }
-                &__like-box {
+                &__heart {
                     width: 9rem;
                     height: 5rem;
                     padding: 0;
@@ -290,46 +267,39 @@
                     cursor: pointer;
                     position: relative;
                     background: transparent;
-                    &:hover i{
-                        .heart{
-                            opacity: 0;
-                        }
-                        .heart__color {
-                            opacity: 1;
-                            color: linear-gradient(0deg,#9356dc,#ff79da);
-                            transition: all 0.5s;
-                        }
-                    } 
-
-
                     i {
-                        font-size: 2rem;
                         position: absolute;
                     }
-
-                    // .heart__color {
-                    //     opacity: 0;
-
-                    //     &:hover { 
-                    //         opacity: 1;
-                    //         color: linear-gradient(0deg,#9356dc,#ff79da);
-                    //         transition: all 0.5s;
-                    //     }
-                    // }
-                }           
+                    .fa-regular {
+                        font-size: 2rem;
+                        &:hover {
+                            opacity: 0;
+                        }    
+                    }
+                    .fa-solid {
+                        font-size: 2rem;
+                        opacity: 0;
+                        color: #9933ff;
+                        &:hover {
+                           opacity: 1;
+                        //     color: linear-gradient(0deg,#9356dc,#ff79da);
+                        //     transition: all 0.5s;
+                        }
+                    }
+                }
+                @include respond(desktop_m) {
+                    width: 40rem;
+                }  
             }
-        }
-    .menu:hover {
-        transform: scale(1.05);
-    }   
+    }
 }
-
 /***********************************/
 /*             FOOTER              */
 /***********************************/
 footer {
     background-color: $color-footer;
     position: relative;
+    padding: 1rem;
     .footer__title {
         font-size: 1.8rem;
         color: $color-text-light;
@@ -355,4 +325,3 @@ footer {
         } 
     }
 }
-
