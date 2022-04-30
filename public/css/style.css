@@ -290,14 +290,13 @@ Texte: Roboto
   z-index: 1000;
 }
 .header a .arrow__back {
-  color: black;
+  color: #000;
   display: flex;
   justify-content: center;
   align-items: center;
   left: 2rem;
   width: 2rem;
   height: 2rem;
-  color: #000;
   font-size: 2rem;
   position: absolute;
   top: 50%;
@@ -318,7 +317,7 @@ Texte: Roboto
 
 .menu {
   margin-top: -4rem;
-  border-radius: 3rem 3rem 0 0;
+  border-radius: 3rem, 3rem, 0, 0;
   background-color: #f6f6f6;
   z-index: 1000;
   position: relative;
@@ -340,30 +339,36 @@ Texte: Roboto
   }
 }
 .menu__header .card__heart {
-  width: 2rem;
-  height: 2rem;
+  width: 9rem;
+  height: 5rem;
   padding: 0;
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
   cursor: pointer;
   position: relative;
   background: transparent;
 }
-.menu__header .card__heart i {
+.menu__header .fa-heart {
   font-size: 2.5rem;
   position: absolute;
-}
-.menu__header .card__heart i:hover {
-  opacity: 0;
-}
-.menu__header .card__heart .heart__color {
-  opacity: 0;
-}
-.menu__header .card__heart .heart__color:hover {
   opacity: 1;
+}
+.menu__header .card__heart--purple {
+  opacity: 0;
+}
+.menu__header .card__heart:hover .card__heart--purple {
+  opacity: 1;
+  color: transparent;
   background: linear-gradient(0deg, #9356dc, #ff79da);
+  background-clip: text;
+  /* https://developer.mozilla.org/fr/docs/Web/CSS/background-clip */
+  -webkit-background-clip: text;
+  /*for Chrome */
   transition: all 0.5s;
+}
+.menu__header .card__heart:hover .far {
+  opacity: 0;
 }
 .menu .menu__cards {
   display: flex;
@@ -450,7 +455,7 @@ Texte: Roboto
   padding-left: 0.5rem;
 }
 .menu .menu__cards .menu__card .menu__item--validation {
-  background: #99e2d0;
+  background: #99E2D0;
   margin: -1rem -7rem -1rem 1rem;
   width: 6rem;
   display: flex;
@@ -487,16 +492,22 @@ Texte: Roboto
   padding: 1.75rem 5.5rem;
   color: #fff;
   cursor: pointer;
-  transition: 0.25s;
-  box-shadow: 0.25rem 0.25rem 10px #00000045;
-  border-radius: 5rem;
-  background: #686868 linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
   font-size: 1.8rem;
   font-weight: 400;
+  border-radius: 5rem;
+  background-image: linear-gradient(to bottom, #FF79DA, #9356DC);
+  transition-property: color, background-color;
+  transition-timing-function: ease-out;
+  transition: all 0.1s;
 }
 .menu .btn__cards .btn__buy:hover {
-  background: #f1ccf99c linear-gradient(45deg, rgba(147, 86, 220, 0.9), 20%, rgba(255, 121, 218, 0.9));
-  box-shadow: 0.25rem 0.25rem 10px #fcfcfc45;
+  transform: translateY(0.1em);
+  box-shadow: 0.6rem 0.7rem 0.8rem rgba(86, 88, 92, 0.22);
+  background-image: linear-gradient(45deg, #9356DC, 20%, #FF79DA);
+}
+.menu .btn__cards .btn__buy:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (min-width: 1024px) {
@@ -521,7 +532,7 @@ Texte: Roboto
   }
 }
 /*======== Modèles ========*/
-.resto .cards .card, .fonctionment .container ul li, .reservation .info__btn:link, .reservation .info__btn:visited {
+.resto .cards .card, .fonctionment .container ul li, .reservation .info__btn:link, .reservation .info__btn:visited, .menu .btn__cards .btn__buy {
   box-shadow: 0.5rem 0.6rem 0.7rem rgba(86, 88, 92, 0.22);
 }
 
@@ -613,8 +624,8 @@ Texte: Roboto
   transition-timing-function: ease-out;
 }
 .reservation .info__btn:hover {
-  transform: translateY(-0.1em);
-  box-shadow: 0 0.5em 0.5em -0.4em rgba(86, 88, 92, 0.22);
+  transform: translateY(0.1em);
+  box-shadow: 0.6rem 0.7rem 0.8rem rgba(86, 88, 92, 0.22);
   background-image: linear-gradient(45deg, #9356DC, 20%, #FF79DA);
 }
 .reservation .info__btn:active {
@@ -733,8 +744,11 @@ Texte: Roboto
   border-radius: 1.5rem;
   margin-bottom: 1.8rem;
   position: relative;
-  transform: scale(1, 1);
+  transform: scale(1);
   transition: all 0.8s ease 0s;
+}
+.resto .cards .card:hover {
+  transform: scale(1.01);
 }
 .resto .cards .card img {
   height: 17.5rem;
@@ -743,7 +757,7 @@ Texte: Roboto
   object-fit: cover;
 }
 .resto .cards .card__badge--new {
-  background: #99e1cf;
+  background: #99E2D0;
   color: #138668;
   padding: 1rem 2rem;
   border-radius: 0.125rem;
@@ -779,22 +793,25 @@ Texte: Roboto
   position: relative;
   background: transparent;
 }
-.resto .cards .card__heart i {
+.resto .cards .card .fa-heart {
+  font-size: 2rem;
+}
+.resto .cards .card__heart--purple {
   position: absolute;
-}
-.resto .cards .card__heart .fa-regular {
-  font-size: 2rem;
-}
-.resto .cards .card__heart .fa-regular:hover {
   opacity: 0;
 }
-.resto .cards .card__heart .fa-solid {
-  font-size: 2rem;
-  opacity: 0;
-  color: #9933ff;
-}
-.resto .cards .card__heart .fa-solid:hover {
+.resto .cards .card__heart:hover .card__heart--purple {
   opacity: 1;
+  color: transparent;
+  background: linear-gradient(0deg, #9356DC, #FF79DA);
+  background-clip: text;
+  /* https://developer.mozilla.org/fr/docs/Web/CSS/background-clip */
+  -webkit-background-clip: text;
+  /*for Chrome */
+  transition: all 0.5s;
+}
+.resto .cards .card__heart:hover .far {
+  opacity: 0;
 }
 @media (min-width: 81.25em) {
   .resto .cards .card {
