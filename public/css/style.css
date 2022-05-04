@@ -702,6 +702,8 @@ Texte: Roboto
 }
 .fonctionment .container ul li:hover {
   background-color: #F5EDFF;
+  transform: translateY(0.1em);
+  box-shadow: 0.6rem 0.7rem 0.8rem rgba(86, 88, 92, 0.22);
 }
 .fonctionment .container ul li:hover i {
   color: #9356DC;

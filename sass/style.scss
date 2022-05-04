@@ -180,8 +180,10 @@
                 }          
                 &:hover {
                     background-color: $color-btn-clair;
+                    transform: translateY(0.1em);
+                    box-shadow: .6rem .7rem .8rem rgba(86 88 92 / 22%);   
                     i {
-                        color: $color-violet;
+                        color: $color-violet;    
                     }
                 }
                 span .title-btn {
@@ -192,6 +194,11 @@
         }
     }
 }
+// .fonctionment .container ul li:hover {
+//     transform: translateY(0.1em);
+//     box-shadow: .6rem .7rem .8rem rgba(86 88 92 / 22%);
+// }
+
 /***********************************/
 /*      SECTION RESTAURANTS        */
 /***********************************/
